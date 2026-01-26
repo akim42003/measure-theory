@@ -1,0 +1,99 @@
+# Lean 4 build artifacts
+/.lake/
+/lake-packages/
+/build/
+/.lean_packages/
+
+# Lean cache files
+*.olean
+*.trace
+*.hash
+
+# Lake (Lean's package manager)
+/lake-manifest.json
+
+# Compiled output
+*.so
+*.dylib
+*.dll
+
+# Editor-specific files
+## Neovim/Vim
+*.swp
+*.swo
+*~
+.*.sw?
+Session.vim
+.netrwhist
+
+## VS Code
+.vscode/
+*.code-workspace
+.history/
+
+## Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+## Sublime Text
+*.sublime-workspace
+*.sublime-project
+
+## IntelliJ
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# OS-specific files
+## macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+## Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+
+## Linux
+.directory
+.Trash-*
+
+# Temporary files
+*.tmp
+*.bak
+*.log
+temp/
+tmp/
+
+# Testing and development
+/.test/
+/test-output/
+
+# Documentation build artifacts
+/docs/_build/
+/docs/.doctrees/
+
+# Python (if using any helper scripts)
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.venv/
+venv/
+
+# Misc
+.env
+.env.local
+*.orig
