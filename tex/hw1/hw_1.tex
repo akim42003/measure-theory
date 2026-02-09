@@ -1,0 +1,122 @@
+\documentclass[12pt]{article}
+
+% Packages
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{enumitem}
+
+% Source - https://tex.stackexchange.com/a/21229
+% Posted by Carsten Thiel
+% Retrieved 2026-02-01, License - CC BY-SA 3.0
+
+\theoremstyle{definition}
+\newtheorem{exmp}{Example}
+
+
+% Title information
+\title{Mathematics 629\\
+Spring 2026\\
+Homework Assignment 1}
+\author{Alexander Kim}
+\date{Due: 2/2/2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+
+	\item Define $f(0) = 0$, and for $0 < x \leq 1$,
+	      \[
+		      f(x) = \begin{cases}
+			      \frac{x}{2}            & \text{if } x \text{ is irrational}                                     \\
+			      \frac{x}{2} - q^{-1/4} & \text{if } x \text{ is rational and } x = p/q \text{ in lowest terms.}
+		      \end{cases}
+	      \]
+
+	      \begin{enumerate}[label=(\alph*)]
+		      \item Determine the set of discontinuities of $f$ on $[0, 1]$.
+		            \\
+		            \\
+		            When $x_{i}$ is irrational, it is defined as $\frac{x_{i}}{2} \in (0,1]$. Thus $f$ is continuous if $x$ is irrational.
+
+		            When $x_{j}$ is rational, $x = \frac{p}{q}$ in lowest terms such that
+		            $f(x) = \frac{p}{2q} - \frac{1}{q^{4}}$. By approaching $x_{j}$ through the irrationals, $f(x_{j-1}) = \frac{x_{j-1}}{2}$. However, when $x_{j}$ is rational, $\frac{1}{q^{4}} > 0$, so $f(x_{j}) \neq \lim_{x_{i} \rightarrow x_{j}} \frac{x_j}{2q} - \frac{1}{q^{4}}$. Thus, the set of discontinuities of $f$ on $[0,1]$ is $\mathbb{Q} \cap(0,1]$.
+		            \\
+		      \item Determine whether $f$ is Riemann integrable on $[0, 1]$ and if so determine the value of the integral.
+		            \\
+		            \\
+		            Since the set of discontinuities of $f$ on $[0,1]$ is countable, we can use the trick from the proof of Lemma 2.6 to construct a set of intervals to show the set of discontinuities is content zero.
+
+		            Let $D_{f} = \{ 0 =d_1, d_2, \cdots d_n = 1\}$ be the set of discontinuities as defined in (a). Then  for every $\epsilon > 0$, we can construct a countable family of intervals $$\{I_j\}_{j = 1}^{\infty}$$ for $d_j \in D_f$ such that
+		            $$I_{j} = (d_j - \frac{\epsilon}{2^{j+2}}, d_j + \frac{\epsilon}{2^{j+2}}).$$
+
+		            Then, $\sum_{j = 1}^{\infty} l(I_j) = \sum_{j = 1}^{\infty} (d_j - d_j + \frac{\epsilon}{2^{j+2}} + \frac{\epsilon}{2^{j+2}}) = \frac{\epsilon}{8} < \epsilon$. Thus, $D_f$ is a Lebesgue nullset, so $f$ is Riemann Integrable by Theorem 4.1.
+		            \\
+		            \\
+		            Since the set of discontinuities is Lebesgue null, $\int_0^1 f(x) = \int_0^1 \frac{x}{2} = \frac{x^2}{4} \vert_0^1 = \frac{1}{4}$.
+	      \end{enumerate}
+
+	\item Show: The set $\mathcal{R}[a, b]$ of real valued Riemann integrable functions on $[a, b]$ form an algebra, i.e. they form a vector space with respect to the usual addition and scalar multiplication, and if $f$ and $g$ are in $\mathcal{R}[a, b]$ then pointwise product $fg : x \mapsto f(x)g(x)$ is in $\mathcal{R}[a, b]$.
+
+	      \begin{proof}
+		      Let $f,g \in \mathcal{R}[a,b]$ and let $x \in [a,b]$. Then in the case that $f$ and $g$ are Riemann integrable at $x$, $f(x) + g(x) \in \mathbb{R}$. In the case that at least one of $f$ or $g$ are not continuous at $x$, we will show the set of discontinuities is a Lebesgue nullset. Because $f$ and $g$ are both continuous, $D_f$ and $D_g$ sets of discontinuities of $f$ and $g$ are Lebesgue nullsets by Theorem 4.1. Then by Lemma 2.2 we know $D_{f+g}$ is a Lebesgue nullset since $D_{f+g} \in D_f \cup D_G$, thus $f + g \in \mathcal{R}[a,b]$.
+		      \\
+		      \\
+		      Next, we will show $f,g$ are closed under scalar multiplication. Let $c \in \mathbb{R}$ and $y \in [a,b]$. Similarly to showing closure under addition, if $f$ is Riemann integrable at $y$, we are done since $cf(y) \in \mathbb{R}$. If $y \in D_f$, $cf$ is Riemann Integrable since the contents of $D_f$ don't change, thus it is still a Lebesgue nullset.
+		      \\
+		      \\
+		      Lastly, we will verify the pointwise product of $f,g \in \mathcal{R}[a,b]$ is closed. Let $z \in [a,b]$. Like the previous operations, if $f, g$ are Riemann integrable at $z$, then $f(z)g(z) \in \mathbb{R}$ so $fg$ is also Riemann integrable. Suppose $z \in D_{fg}$. Then either $z \in D_f$ and/or $z \in D_g$ which shows $D_{fg} \subseteq D_f \cup D_g$. Since countable unions of Lebesgue subsets are Lebesgue nullsets, then $D_{fg}$ is also a Lebesgue nullset. Thus, $\mathcal{R}[a,b]$ satisfies closure under addition, scalar multiplication and pointwise product.
+		      \\
+		      \\Since $\mathcal{R}[a,b]$ is composed of real valued functions, there exists an additive identity function, multiplicative identity function, additive inverses for all $f \in \mathcal{R}[a,b]$ as well as distributivity of scalar multiplication and the pointwise product. By definition, $\mathcal{R}[a,b]$ is an algebra.
+
+
+
+	      \end{proof}
+
+	\item Let $f : [a, b] \to \mathbb{R}$ be an increasing function. Show that the set of discontinuities of $f$ is a Lebesgue null set (and hence $f$ is Riemann integrable).
+
+	      \begin{proof}
+
+		      Let $D_f$ denote the set of discontinuities of $f$. Notice that if we express the length of the distance of a discontinuity as $j_{k} = \lim_{x \rightarrow d_i^{+}}f(x) - \lim_{x-\rightarrow d_{i}^{-}}f(x)$, then the maximum of the sum of lengths is
+		      $$S_f = \sum_{k= 2}^{m}j_{k} <= f(b) - f(a)$$ because $f$ is an increasing function. Since $[a,b]$ is compact and $f$ is increasing, then $S_f$ has an upper bound which means that $D_f$ is countable because an infinite series of positive elements is unbounded. Thus we can construct countable intervals $\{I_i\}_{i = 1}^{\infty}$ such that for every $d_i \in D_f$ and $\epsilon > 0$,
+		      $$I_i = (d_i - \frac{\epsilon}{2^{i+2}}, d_i + \frac{\epsilon}{2^{i+2}}).$$
+		      Notice that
+		      $$\sum_{i = 1}^{\infty} l(I_i) = \sum_{i = 1}^{\infty} (d_i - d_i + \frac{\epsilon}{2^{i+2}} + \frac{\epsilon}{2^{i+2}}) = \sum_{i = 1}^{\infty} \frac{\epsilon}{2^{i+1}} = \frac{\epsilon}{2} < \epsilon.$$ Hence, $D_f$ is a Lebesgue nullset by definition.
+
+
+	      \end{proof}
+
+	\item Let $f : [a, b] \to \mathbb{R}$ be a nonnegative Riemann integrable function such that $\int f = 0$. Show that $\{x : f(x) \neq 0\}$ is a Lebesgue null set.
+
+	      \begin{proof}
+		      Let $f:[a,b]\rightarrow \mathbb{R}$ is Riemann Integrable and nonnegative such that $\int f = 0$. Since $f$ is nonnegative, then $\{x: f(x) \neq 0 \} = \{x: f(x) > 0\}$. Let $E_n = \{x \in [a,b]: f(x)\geq \frac{1}{n}\}$. Then, $\{x:f(x)>0\} = \bigcup_{n=1}^\infty E_n$. Since this is a countable union of sets, by Lemma 2.2 it suffices to show $E_n$ is a Lebesgue nullset. Suppose to the contrary that $E_n$ is not a Lebesgue nullset. Next, construct a partition $P = \{a = x_i, x_2 \cdots x_m = b\}$ such that $J = \{i:[x_{i-1},x_i]\cap E_n \neq \emptyset \}$ that covers $E_n$. Then for all $\epsilon > 0$,
+		      $$\sum_{i\in J} (x_i - x_{i-1}) \geq \epsilon$$
+		      since $E_n$ is not a Lebesgue nullset. Notice that for all $E_n$, $supf(x) \geq \frac{1}{n}$ which shows
+		      $$U(f,P) = \sum_{i = 1}^{m} supf(x)(x_i - x_{i-1}) \geq \sum_{i = 1}^m \frac{1}{n}(x_i - x_{i-1}) \geq \frac{\epsilon}{n} > 0.$$
+		      This contradicts the assumption that $\int f = 0$, hence $\{x: f(x) \neq 0\}$ is a Lebesgue null set as a result of Lemma 2.2.
+	      \end{proof}
+
+	\item The intersection of $\sigma$-algebras is a $\sigma$-algebra (important, and easy to check). This does not work for unions:
+
+	      Give an example of two $\sigma$-algebras whose union is not a $\sigma$-algebra.
+
+	      % Source - https://tex.stackexchange.com/a/21229
+	      % Posted by Carsten Thiel
+	      % Retrieved 2026-02-01, License - CC BY-SA 3.0
+
+	      \begin{exmp}
+		      Let $M_1$ be a $\sigma$-algebra on $\mathbb{N}$ with a set $A = \{1,2,3\}$ where $A^c = \{n \in \mathbb{N} : n > 3\}$. Then $M_1 = \{\emptyset, \mathbb{N}, A, A^c$.
+		      \\
+		      Let $M_2$ be a $\sigma$-algebra on $\mathbb{N}$ such that $B = \{4,5,6\}$  and $B^c = \{n\in \mathbb{N} : n \neq 4, 5, 6 \}$.
+		      \\
+		      Then the union $M_1 \cup M_2 = \{\emptyset, \mathbb{N}, A, A^c, B, B^c \}$. However, since $A \cup B = \{1,2,3,4,5,6 \} \notin M_1 \cup M_2$, then $M_1 \cup M_2$ is not a $\sigma$-algebra.
+	      \end{exmp}
+
+
+
+\end{enumerate}
+
+\end{document}
