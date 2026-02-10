@@ -9,7 +9,7 @@
 \newcommand{\sd}{\mathbin{\triangle}}  % symmetric difference
 
 % Answer environment -- fill in your proofs here
-\newenvironment{answer}{\begin{proof}[Answer]}{\end{proof}}
+\newenvironment{example}{\begin{proof}[Example]}{\end{proof}}
 
 \title{Mathematics 629 --- Homework 2}
 \author{Alex Kim}
@@ -23,20 +23,20 @@
 	%%% Problem 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\item Give an example of two $\sigma$-algebras whose union is not a $\sigma$-algebra.
 
-	      \begin{answer}
-		      Let $X = \{1,2,3\}$ be a set with $M_1 = \{\emptyset, \{1\}, \{2,3\}, X\}$ and $M_2 = \{\emptyset, \{2\}, \{1,3\}, X\}$. Notice that 
+	      \begin{example}
+		      Let $X = \{1,2,3\}$ be a set with $M_1 = \{\emptyset, \{1\}, \{2,3\}, X\}$ and $M_2 = \{\emptyset, \{2\}, \{1,3\}, X\}$. Notice that
 
-		      $$M_1 \cup M_2 = \{\emptyset, \{1\}, \{0\}, \{2,3\}, \{1,3\}\, X\}$$
+		      $$M_1 \cup M_2 = \{\emptyset, \{1\}, \{0\}, \{2,3\}, \{1,3\}, X\}$$
 
-		      which violates property 3 of the definition of an algebra on $X$ since, for example, $\emptyset^C = M_1 \cup M_2 \notin M_1\cup M_2$. 
-	      \end{answer}
+		      which violates property 3 of the definition of an algebra on $X$ since, for example, $\emptyset^C = M_1 \cup M_2 \notin M_1\cup M_2$.
+	      \end{example}
 
 	      %%% Problem 2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\item Prove: An algebra $\mathcal{A}$ is a $\sigma$-algebra if and only if it is closed under countable increasing union (that is, if $E_j$ is a sequence of sets in $\mathcal{A}$ with $E_j \subset E_{j+1}$, then $\bigcup_j E_j \in \mathcal{A}$).
 
-	      \begin{answer}
-		      First, we will show $\mathcal{A}$ is a $\sigma$-algebra while closed under countable, increasing unions. 
-	      \end{answer}
+	      \begin{proof}
+		      First, assume $\mathcal{A}$ is a $\sigma$-algebra on some set $X$. Since $\{E_j\} \in \mathcal{A}$ is an increaseing sequence of sets for all $j \in \mathbb{N}$, and because $E_{j-1} \subset E_{j}$, it follows that $\bigcup_{j}E_j \in A$ by definition of unions. Next, let $\bigcup_j E_j \in \mathcal{A}$ and $\{E_j\} \in \mathcal{A}$ is a countable increasing union of sets.
+	      \end{proof}
 
 	      %%% Problem 3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\item A family of subsets of $X$ is called a \emph{ring} if the following axioms hold:
@@ -49,27 +49,27 @@
 	      \begin{enumerate}[label=(\roman*),itemsep=6pt]
 		      \item Rings are closed under finite intersections. $\sigma$-rings are closed under countable intersections.
 
-		            \begin{answer}
+		            \begin{proof}
 			            % YOUR ANSWER HERE
-		            \end{answer}
+		            \end{proof}
 
 		      \item A ring is an algebra if and only if $X \in \mathcal{R}$.
 
-		            \begin{answer}
+		            \begin{proof}
 			            % YOUR ANSWER HERE
-		            \end{answer}
+		            \end{proof}
 
 		      \item If $\mathcal{R}$ is a $\sigma$-ring then the collection $\{E \subset X : E \in \mathcal{R} \text{ or } E^c \in \mathcal{R}\}$ is a $\sigma$-algebra.
 
-		            \begin{answer}
+		            \begin{proof}
 			            % YOUR ANSWER HERE
-		            \end{answer}
+		            \end{proof}
 
 		      \item If $\mathcal{R}$ is a $\sigma$-ring then the collection $\{E \subset X : E \cap F \in \mathcal{R} \text{ for all } F \in \mathcal{R}\}$ is a $\sigma$-algebra.
 
-		            \begin{answer}
+		            \begin{proof}
 			            % YOUR ANSWER HERE
-		            \end{answer}
+		            \end{proof}
 	      \end{enumerate}
 
 	      %%% Problem 4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -95,9 +95,9 @@
 		      \mu(E) + \mu(F) = \mu(E \cup F) + \mu(E \cap F).
 	      \]
 
-	      \begin{answer}
+	      \begin{proof}
 		      % YOUR ANSWER HERE
-	      \end{answer}
+	      \end{proof}
 
 	      %%% Problem 6 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\item Let $(X, \mathcal{M}, \mu)$ be a measure space. The symmetric difference of two sets $E$ and $F$ is given by $E \sd F := (E \setminus F) \cup (F \setminus E)$. Prove:
@@ -105,15 +105,15 @@
 	      \begin{enumerate}[label=(\roman*),itemsep=6pt]
 		      \item If $E, F \in \mathcal{M}$ and $\mu(E \sd F) = 0$ then $\mu(E) = \mu(F)$.
 
-		            \begin{answer}
+		            \begin{proof}
 			            % YOUR ANSWER HERE
-		            \end{answer}
+		            \end{proof}
 
 		      \item Define a relation on $\mathcal{M}$ by saying that $E \sim F$ if and only if $\mu(E \sd F) = 0$. Show that $\sim$ is an equivalence relation.
 
-		            \begin{answer}
+		            \begin{proof}
 			            % YOUR ANSWER HERE
-		            \end{answer}
+		            \end{proof}
 
 		      \item For $E, F$ define $\rho(E,F) = \mu(E \sd F)$. Prove a triangle inequality
 		            \[
@@ -121,9 +121,9 @@
 		            \]
 		            for all $E, F, G$. Argue that $\rho$ defines a metric on the space $\mathcal{M}/{\sim}$ of equivalence classes.
 
-		            \begin{answer}
+		            \begin{proof}
 			            % YOUR ANSWER HERE
-		            \end{answer}
+		            \end{proof}
 	      \end{enumerate}
 
 \end{enumerate}
