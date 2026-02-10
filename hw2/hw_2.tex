@@ -35,7 +35,7 @@
 	\item Prove: An algebra $\mathcal{A}$ is a $\sigma$-algebra if and only if it is closed under countable increasing union (that is, if $E_j$ is a sequence of sets in $\mathcal{A}$ with $E_j \subset E_{j+1}$, then $\bigcup_j E_j \in \mathcal{A}$).
 
 	      \begin{proof}
-		      First, assume $\mathcal{A}$ is a $\sigma$-algebra on some set $X$. Since $\{E_j\} \in \mathcal{A}$ is an increaseing sequence of sets for all $j \in \mathbb{N}$, and because $E_{j-1} \subset E_{j}$, it follows that $\bigcup_{j}E_j \in A$ by definition of unions. Next, let $\bigcup_j E_j \in \mathcal{A}$ and $\{E_j\} \in \mathcal{A}$ is a countable increasing union of sets.
+		      First, assume $\mathcal{A}$ is a $\sigma$-algebra on some set $X$. Since $\{E_j\} \in \mathcal{A}$ is an increaseing sequence of sets for all $j \in \mathbb{N}$, and because $E_{j-1} \subset E_{j}$, it follows that $\bigcup_{j}E_j \in A$ by definition of $\sigma$-algebras. Next, let $\{E_j\}$ be any sequence of sets in $\mathcal{A}$ and let $F_n = \bigcup_{j = 1}^n E_j$ for some $n \in \mathbb{N}$. Since $\{E_j\}$ is any sequence, then $F_n \subset F_{n+1}$, thus $\{F_n\}$ is increasing. By definition of $\mathcal{A}$ as an algebra, $F_n \in A$, and $\bigcup_{n} F_n \in \mathcal{A}$ because $\mathcal{A}$ is assumed to be closed under countable increasing unions. Thus by definition, $\mathcal{A}$ is a $\sigma$-algebra because $\bigcup_{n} F_n = \bigcup_{j} E_j \in \mathcal{A}$.    
 	      \end{proof}
 
 	      %%% Problem 3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
