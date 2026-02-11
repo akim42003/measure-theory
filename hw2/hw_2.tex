@@ -35,7 +35,11 @@
 	\item Prove: An algebra $\mathcal{A}$ is a $\sigma$-algebra if and only if it is closed under countable increasing union (that is, if $E_j$ is a sequence of sets in $\mathcal{A}$ with $E_j \subset E_{j+1}$, then $\bigcup_j E_j \in \mathcal{A}$).
 
 	      \begin{proof}
-		      First, assume $\mathcal{A}$ is a $\sigma$-algebra on some set $X$. Since $\{E_j\} \in \mathcal{A}$ is an increaseing sequence of sets for all $j \in \mathbb{N}$, and because $E_{j-1} \subset E_{j}$, it follows that $\bigcup_{j}E_j \in A$ by definition of $\sigma$-algebras. Next, let $\{E_j\}$ be any sequence of sets in $\mathcal{A}$ and let $F_n = \bigcup_{j = 1}^n E_j$ for some $n \in \mathbb{N}$. Since $\{E_j\}$ is any sequence, then $F_n \subset F_{n+1}$, thus $\{F_n\}$ is increasing. By definition of $\mathcal{A}$ as an algebra, $F_n \in A$, and $\bigcup_{n} F_n \in \mathcal{A}$ because $\mathcal{A}$ is assumed to be closed under countable increasing unions. Thus by definition, $\mathcal{A}$ is a $\sigma$-algebra because $\bigcup_{n} F_n = \bigcup_{j} E_j \in \mathcal{A}$.    
+		      First, assume $\mathcal{A}$ is a $\sigma$-algebra on some set $X$. Since $\{E_j\} \in \mathcal{A}$ is an increaseing sequence of sets for all $j \in \mathbb{N}$, and because $E_{j-1} \subset E_{j}$, it follows that $\bigcup_{j}E_j \in A$ by definition of $\sigma$-algebras. 
+		      Next, let $\{E_j\}$ be any sequence of sets in $\mathcal{A}$ and let $F_n = \bigcup_{j = 1}^n E_j$ for some $n \in \mathbb{N}$. 
+		      Since $\{E_j\}$ is any sequence, then $F_n \subset F_{n+1}$, thus $\{F_n\}$ is increasing. 
+		      By definition of $\mathcal{A}$ as an algebra, $F_n \in A$, and $\bigcup_{n} F_n \in \mathcal{A}$ because $\mathcal{A}$ is assumed to be closed under countable increasing unions. 
+		      Thus by definition, $\mathcal{A}$ is a $\sigma$-algebra because $\bigcup_{n} F_n = \bigcup_{j} E_j \in \mathcal{A}$.    
 	      \end{proof}
 
 	      %%% Problem 3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -50,25 +54,47 @@
 		      \item Rings are closed under finite intersections. $\sigma$-rings are closed under countable intersections.
 
 		            \begin{proof}
-			            % YOUR ANSWER HERE
+				    Let $E, F \subset \mathcal{R}$ be subsets.
+				    Observe that $E\backslash (E \backslash F) = E \cap F \in \mathcal{R} $. Let $\{E_j\}^n$ be a finite collection of sets in $\mathcal{R}$. By the previous observations, $E_1 \cap E_2 \in \mathcal{R}$. Assume 
+				    for some $k \geq 2$, $\bigcap_{j=1}^k E_j \in \mathcal{R}$. Then for $E_{k+1} \in \mathcal{R}$, $\bigcap_{j=1}^k E_j \cap E_{k+1} \in \mathcal{R}$ by the base case.
+				    \newline
+				    Suppose $\mathcal{R}$ is a $\sigma$-ring. Then for $E_1, E_2 \cdots \in \mathcal{R}$, by definition, 
+				    $\bigcup_{j=1}^\infty E_j \in \mathcal{R}$. By the previous identity, 
+				    the countable intersection of sets in $\mathcal{R}$, $\bigcap{j=1}^\infty E_j = E_1 \backslash \bigcup{j=1}^\infty (E_1 \backslash E_j)$. Since each $E_1\backslash E_j \in \mathcal{R}$ by axiom 2, and $\mathcal{R}$ 
+				    is closed under countable unions by definition of $\sigma$-rings, then
+				    $\bigcap{j=1}^\infty E_j \in \mathcal{R}$ by axiom 2. 
+
 		            \end{proof}
 
 		      \item A ring is an algebra if and only if $X \in \mathcal{R}$.
 
 		            \begin{proof}
-			            % YOUR ANSWER HERE
+				    First, suppose a ring $\mathcal{R}$ is an algebra. Then by definition, $\mathcal{R}$ is a collection of subsets over some set $X$ where $X \in \mathcal{R}$. Then, suppose $X \in \mathcal{R}$ where $\mathcal{R}$ is a ring. By axiom 1 of rings, $\mathcal{R}$, for all $E, F \in \mathcal{R}
+				    $, $E \cup F \in \mathcal{R}$. Since $X \in \mathcal{R}$ from the assumption, then for all $E \in \mathcal{R}$, $X\backslash E \in \mathcal{R}$
+				    by axiom 2 of rings. Thus, $\mathcal{R}$ is an algebra by definition.
 		            \end{proof}
 
 		      \item If $\mathcal{R}$ is a $\sigma$-ring then the collection $\{E \subset X : E \in \mathcal{R} \text{ or } E^c \in \mathcal{R}\}$ is a $\sigma$-algebra.
 
 		            \begin{proof}
-			            % YOUR ANSWER HERE
+				    Let $\mathcal{R}$ be a $\sigma$-ring and define collection 
+				    $C = \{E \subset X : E \in \mathcal{R} \text{ or } X\backslash E
+				    \in \mathcal{R}\}$. By axiom 2 of rings, then for all $E \in C$, $X\backslash E \in C$ also. Next, let $E_1, E_2,\cdots, E_n \in C$. Notice that since $E\backslash E = \emptyset
+				    \in \mathcal{R}$, so $\emptyset^{c} = X \in C$ by construction. To show $C$ is closed under countable unions, if $\mathcal{R} \in C$, we are done. Otherwise, consider some $E_k \notin \mathcal{R}$. Since $\cap E_n^c \subset E_k^c$, then 
+				    $$\bigcap_n E_n^c = E_k^c \backslash (\bigcup_n E_k^c \cap E_n).$$
+				    so if $E_n \in \mathcal{R}$, $E_n \cap E_k^c \in \mathcal{R}$ and if 
+				    $E_n^c \in \mathcal{R}$, $E_n^c \cap E_k^c \in \mathcal{R}$ also. Thus,
+				    $\bigcap E_n^c = \bigcup E_n \in \mathcal{R}$, so $\mathcal{R}$ is a $\sigma$-algebra by definition. 
+
 		            \end{proof}
 
 		      \item If $\mathcal{R}$ is a $\sigma$-ring then the collection $\{E \subset X : E \cap F \in \mathcal{R} \text{ for all } F \in \mathcal{R}\}$ is a $\sigma$-algebra.
 
 		            \begin{proof}
-			            % YOUR ANSWER HERE
+				Let $\mathcal{R}$ be a $\sigma$-ring and define collection $C =\{E \subset X : E \cap F \in \mathcal{R} \text{ for all } F \in \mathcal{R}$. 
+				Let $E_1, E_2, \cdots E_n \in \mathcal{R}$ and $F \in \mathcal{R}$. Since $E \cap E = \emptyset \in C$, by axiom 2 of rings
+				$X \in \mathcal{R}$, so $X \cap \emptyset = X \in C$ by construction. By a similar argument, $\bigcup_n E_n \in C$ since $\mathcal{R}$ is closed under countable unions. Notice that because $X \in C$, and $X = E \cup (X\backslash E)$ for all $E \in C$, then $X\backslash E \in C$ since $C$ is closed under
+				unions. Thus, $C$ is a $\sigma$-algebra by definition.
 		            \end{proof}
 	      \end{enumerate}
 
