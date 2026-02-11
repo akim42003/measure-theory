@@ -122,7 +122,14 @@
 	      \]
 
 	      \begin{proof}
-		      % YOUR ANSWER HERE
+		      By decomposing $E$ and $F \in \mathcal{M}$ into $E = (E\backslash F) \uplus (E \cap F)$ and $F = (F\backslash E) \uplus (E \cap F)$ then 
+		      $$ E \cup F = (E \backslash F) \uplus (E \cap F) \uplus (E \backslash F).$$
+		      Then by subtitution,
+		      \begin{align}
+			      \mu(E) + \mu(F) &= \mu(E\backslash F) + 2\mu(E \cap F) + \mu(F\backslash E)\\
+		      			&=  \mu(E \cup F) + \mu (E \cap F).
+			\end{align}
+			by the definition of measure.
 	      \end{proof}
 
 	      %%% Problem 6 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
