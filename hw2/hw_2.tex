@@ -35,11 +35,11 @@
 	\item Prove: An algebra $\mathcal{A}$ is a $\sigma$-algebra if and only if it is closed under countable increasing union (that is, if $E_j$ is a sequence of sets in $\mathcal{A}$ with $E_j \subset E_{j+1}$, then $\bigcup_j E_j \in \mathcal{A}$).
 
 	      \begin{proof}
-		      First, assume $\mathcal{A}$ is a $\sigma$-algebra on some set $X$. Since $\{E_j\} \in \mathcal{A}$ is an increaseing sequence of sets for all $j \in \mathbb{N}$, and because $E_{j-1} \subset E_{j}$, it follows that $\bigcup_{j}E_j \in A$ by definition of $\sigma$-algebras. 
-		      Next, let $\{E_j\}$ be any sequence of sets in $\mathcal{A}$ and let $F_n = \bigcup_{j = 1}^n E_j$ for some $n \in \mathbb{N}$. 
-		      Since $\{E_j\}$ is any sequence, then $F_n \subset F_{n+1}$, thus $\{F_n\}$ is increasing. 
-		      By definition of $\mathcal{A}$ as an algebra, $F_n \in A$, and $\bigcup_{n} F_n \in \mathcal{A}$ because $\mathcal{A}$ is assumed to be closed under countable increasing unions. 
-		      Thus by definition, $\mathcal{A}$ is a $\sigma$-algebra because $\bigcup_{n} F_n = \bigcup_{j} E_j \in \mathcal{A}$.    
+		      First, assume $\mathcal{A}$ is a $\sigma$-algebra on some set $X$. Since $\{E_j\} \in \mathcal{A}$ is an increaseing sequence of sets for all $j \in \mathbb{N}$, and because $E_{j-1} \subset E_{j}$, it follows that $\bigcup_{j}E_j \in A$ by definition of $\sigma$-algebras.
+		      Next, let $\{E_j\}$ be any sequence of sets in $\mathcal{A}$ and let $F_n = \bigcup_{j = 1}^n E_j$ for some $n \in \mathbb{N}$.
+		      Since $\{E_j\}$ is any sequence, then $F_n \subset F_{n+1}$, thus $\{F_n\}$ is increasing.
+		      By definition of $\mathcal{A}$ as an algebra, $F_n \in A$, and $\bigcup_{n} F_n \in \mathcal{A}$ because $\mathcal{A}$ is assumed to be closed under countable increasing unions.
+		      Thus by definition, $\mathcal{A}$ is a $\sigma$-algebra because $\bigcup_{n} F_n = \bigcup_{j} E_j \in \mathcal{A}$.
 	      \end{proof}
 
 	      %%% Problem 3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -54,47 +54,47 @@
 		      \item Rings are closed under finite intersections. $\sigma$-rings are closed under countable intersections.
 
 		            \begin{proof}
-				    Let $E, F \subset \mathcal{R}$ be subsets.
-				    Observe that $E\backslash (E \backslash F) = E \cap F \in \mathcal{R} $. Let $\{E_j\}^n$ be a finite collection of sets in $\mathcal{R}$. By the previous observations, $E_1 \cap E_2 \in \mathcal{R}$. Assume 
-				    for some $k \geq 2$, $\bigcap_{j=1}^k E_j \in \mathcal{R}$. Then for $E_{k+1} \in \mathcal{R}$, $\bigcap_{j=1}^k E_j \cap E_{k+1} \in \mathcal{R}$ by the base case.
-				    \newline
-				    Suppose $\mathcal{R}$ is a $\sigma$-ring. Then for $E_1, E_2 \cdots \in \mathcal{R}$, by definition, 
-				    $\bigcup_{j=1}^\infty E_j \in \mathcal{R}$. By the previous identity, 
-				    the countable intersection of sets in $\mathcal{R}$, $\bigcap{j=1}^\infty E_j = E_1 \backslash \bigcup{j=1}^\infty (E_1 \backslash E_j)$. Since each $E_1\backslash E_j \in \mathcal{R}$ by axiom 2, and $\mathcal{R}$ 
-				    is closed under countable unions by definition of $\sigma$-rings, then
-				    $\bigcap{j=1}^\infty E_j \in \mathcal{R}$ by axiom 2. 
+			            Let $E, F \subset \mathcal{R}$ be subsets.
+			            Observe that $E\backslash (E \backslash F) = E \cap F \in \mathcal{R} $. Let $\{E_j\}^n$ be a finite collection of sets in $\mathcal{R}$. By the previous observations, $E_1 \cap E_2 \in \mathcal{R}$. Assume
+			            for some $k \geq 2$, $\bigcap_{j=1}^k E_j \in \mathcal{R}$. Then for $E_{k+1} \in \mathcal{R}$, $\bigcap_{j=1}^k E_j \cap E_{k+1} \in \mathcal{R}$ by the base case.
+			            \newline
+			            Suppose $\mathcal{R}$ is a $\sigma$-ring. Then for $E_1, E_2 \cdots \in \mathcal{R}$, by definition,
+			            $\bigcup_{j=1}^\infty E_j \in \mathcal{R}$. By the previous identity,
+			            the countable intersection of sets in $\mathcal{R}$, $\bigcap{j=1}^\infty E_j = E_1 \backslash \bigcup{j=1}^\infty (E_1 \backslash E_j)$. Since each $E_1\backslash E_j \in \mathcal{R}$ by axiom 2, and $\mathcal{R}$
+			            is closed under countable unions by definition of $\sigma$-rings, then
+			            $\bigcap{j=1}^\infty E_j \in \mathcal{R}$ by axiom 2.
 
 		            \end{proof}
 
 		      \item A ring is an algebra if and only if $X \in \mathcal{R}$.
 
 		            \begin{proof}
-				    First, suppose a ring $\mathcal{R}$ is an algebra. Then by definition, $\mathcal{R}$ is a collection of subsets over some set $X$ where $X \in \mathcal{R}$. Then, suppose $X \in \mathcal{R}$ where $\mathcal{R}$ is a ring. By axiom 1 of rings, $\mathcal{R}$, for all $E, F \in \mathcal{R}
-				    $, $E \cup F \in \mathcal{R}$. Since $X \in \mathcal{R}$ from the assumption, then for all $E \in \mathcal{R}$, $X\backslash E \in \mathcal{R}$
-				    by axiom 2 of rings. Thus, $\mathcal{R}$ is an algebra by definition.
+			            First, suppose a ring $\mathcal{R}$ is an algebra. Then by definition, $\mathcal{R}$ is a collection of subsets over some set $X$ where $X \in \mathcal{R}$. Then, suppose $X \in \mathcal{R}$ where $\mathcal{R}$ is a ring. By axiom 1 of rings, $\mathcal{R}$, for all $E, F \in \mathcal{R}
+			            $, $E \cup F \in \mathcal{R}$. Since $X \in \mathcal{R}$ from the assumption, then for all $E \in \mathcal{R}$, $X\backslash E \in \mathcal{R}$
+			            by axiom 2 of rings. Thus, $\mathcal{R}$ is an algebra by definition.
 		            \end{proof}
 
 		      \item If $\mathcal{R}$ is a $\sigma$-ring then the collection $\{E \subset X : E \in \mathcal{R} \text{ or } E^c \in \mathcal{R}\}$ is a $\sigma$-algebra.
 
 		            \begin{proof}
-				    Let $\mathcal{R}$ be a $\sigma$-ring and define collection 
-				    $C = \{E \subset X : E \in \mathcal{R} \text{ or } X\backslash E
-				    \in \mathcal{R}\}$. By axiom 2 of rings, then for all $E \in C$, $X\backslash E \in C$ also. Next, let $E_1, E_2,\cdots, E_n \in C$. Notice that since $E\backslash E = \emptyset
-				    \in \mathcal{R}$, so $\emptyset^{c} = X \in C$ by construction. To show $C$ is closed under countable unions, if $\mathcal{R} \in C$, we are done. Otherwise, consider some $E_k \notin \mathcal{R}$. Since $\cap E_n^c \subset E_k^c$, then 
-				    $$\bigcap_n E_n^c = E_k^c \backslash (\bigcup_n E_k^c \cap E_n).$$
-				    so if $E_n \in \mathcal{R}$, $E_n \cap E_k^c \in \mathcal{R}$ and if 
-				    $E_n^c \in \mathcal{R}$, $E_n^c \cap E_k^c \in \mathcal{R}$ also. Thus,
-				    $\bigcap E_n^c = \bigcup E_n \in \mathcal{R}$, so $\mathcal{R}$ is a $\sigma$-algebra by definition. 
+			            Let $\mathcal{R}$ be a $\sigma$-ring and define collection
+			            $C = \{E \subset X : E \in \mathcal{R} \text{ or } X\backslash E
+				            \in \mathcal{R}\}$. By axiom 2 of rings, then for all $E \in C$, $X\backslash E \in C$ also. Next, let $E_1, E_2,\cdots, E_n \in C$. Notice that since $E\backslash E = \emptyset
+				            \in \mathcal{R}$, so $\emptyset^{c} = X \in C$ by construction. To show $C$ is closed under countable unions, if $\mathcal{R} \in C$, we are done. Otherwise, consider some $E_k \notin \mathcal{R}$. Since $\cap E_n^c \subset E_k^c$, then
+			            $$\bigcap_n E_n^c = E_k^c \backslash (\bigcup_n E_k^c \cap E_n).$$
+			            so if $E_n \in \mathcal{R}$, $E_n \cap E_k^c \in \mathcal{R}$ and if
+			            $E_n^c \in \mathcal{R}$, $E_n^c \cap E_k^c \in \mathcal{R}$ also. Thus,
+			            $\bigcap E_n^c = \bigcup E_n \in \mathcal{R}$, so $\mathcal{R}$ is a $\sigma$-algebra by definition.
 
 		            \end{proof}
 
 		      \item If $\mathcal{R}$ is a $\sigma$-ring then the collection $\{E \subset X : E \cap F \in \mathcal{R} \text{ for all } F \in \mathcal{R}\}$ is a $\sigma$-algebra.
 
 		            \begin{proof}
-				Let $\mathcal{R}$ be a $\sigma$-ring and define collection $C =\{E \subset X : E \cap F \in \mathcal{R} \text{ for all } F \in \mathcal{R}$. 
-				Let $E_1, E_2, \cdots E_n \in \mathcal{R}$ and $F \in \mathcal{R}$. Since $E \cap E = \emptyset \in C$, by axiom 2 of rings
-				$X \in \mathcal{R}$, so $X \cap \emptyset = X \in C$ by construction. By a similar argument, $\bigcup_n E_n \in C$ since $\mathcal{R}$ is closed under countable unions. Notice that because $X \in C$, and $X = E \cup (X\backslash E)$ for all $E \in C$, then $X\backslash E \in C$ since $C$ is closed under
-				unions. Thus, $C$ is a $\sigma$-algebra by definition.
+			            Let $\mathcal{R}$ be a $\sigma$-ring and define collection $C =\{E \subset X : E \cap F \in \mathcal{R} \text{ for all } F \in \mathcal{R}$.
+			            Let $E_1, E_2, \cdots E_n \in \mathcal{R}$ and $F \in \mathcal{R}$. Since $E \cap E = \emptyset \in C$, by axiom 2 of rings
+			            $X \in \mathcal{R}$, so $X \cap \emptyset = X \in C$ by construction. By a similar argument, $\bigcup_n E_n \in C$ since $\mathcal{R}$ is closed under countable unions. Notice that because $X \in C$, and $X = E \cup (X\backslash E)$ for all $E \in C$, then $X\backslash E \in C$ since $C$ is closed under
+			            unions. Thus, $C$ is a $\sigma$-algebra by definition.
 		            \end{proof}
 	      \end{enumerate}
 
@@ -105,23 +105,23 @@
 		      \item Prove that $\mathcal{B}_{\R}$ is generated by the closed and bounded intervals, i.e.\ sets of the form $[a,b]$ with $a,b \in \R$ and $a < b$.
 
 		            \begin{proof}
-				    Let $\mathcal{E}$ be the collection of closed and bounded intervals $[a,b] \in \mathbb{R}$. Since $[a,b] \subset (a,b)$ for all $a,b\in \mathcal{R}$, then $\mathfrak{M}(\mathcal{E}) \subset \mathcal{B}_{\R})$. By Lemma 2.7, it suffices to show every open set belongs to $\mathfrak{M(\mathcal{E})}$. By definition of an algebra, $[a,b]^c = \R \backslash [a,b] \in \mathcal{E}.$ Since 
-				    $$[a,b]^c = (-\infty, a -\epsilon) \cup (b + \epsilon, \infty)$$
-				    for some $\epsilon > 0$, then for the countable sequence
-				    $x_1, x_2 \cdots x_n \in \R$, 
-				    $$\bigcup_{j=1}^n [x_j, x_{j+1}] = 
-				    \bigcup_{j=1}^n (-\infty, x_i - \epsilon) \cup (x_{i+1} +\epsilon, \infty) = \bigcup_{j=1}^n (x_i, x_{i+1}).$$ Since the complement of closed and boudned intervals are in $\mathfrak{M}(\mathcal{E})$, then all open intervals are in $\mathfrak{M}(\mathcal{E})$ also, thus 
-				    $\mathcal{B}_{\R} \subset \mathfrak{M}(\mathcal{E})$. 
+			            Let $\mathcal{E}$ be the collection of closed and bounded intervals $[a,b] \in \mathbb{R}$. Since $[a,b] \subset (a,b)$ for all $a,b\in \mathcal{R}$, then $\mathfrak{M}(\mathcal{E}) \subset \mathcal{B}_{\R})$. By Lemma 2.7, it suffices to show every open set belongs to $\mathfrak{M(\mathcal{E})}$. By definition of an algebra, $[a,b]^c = \R \backslash [a,b] \in \mathcal{E}.$ Since
+			            $$[a,b]^c = (-\infty, a -\epsilon) \cup (b + \epsilon, \infty)$$
+			            for some $\epsilon > 0$, then for the countable sequence
+			            $x_1, x_2 \cdots x_n \in \R$,
+			            $$\bigcup_{j=1}^n [x_j, x_{j+1}] =
+				            \bigcup_{j=1}^n (-\infty, x_i - \epsilon) \cup (x_{i+1} +\epsilon, \infty) = \bigcup_{j=1}^n (x_i, x_{i+1}).$$ Since the complement of closed and boudned intervals are in $\mathfrak{M}(\mathcal{E})$, then all open intervals are in $\mathfrak{M}(\mathcal{E})$ also, thus
+			            $\mathcal{B}_{\R} \subset \mathfrak{M}(\mathcal{E})$.
 
 		            \end{proof}
 
-		      \item Prove that $\mathcal{B}_{\R}$ is generated by the collection of sets of the form $(-\infty, a)$ with $a \in \R$. 
+		      \item Prove that $\mathcal{B}_{\R}$ is generated by the collection of sets of the form $(-\infty, a)$ with $a \in \R$.
 
 		            \begin{proof}
-				    Let $\mathcal{E}$ be the collection of sets of the form $(-\infty, a)$ with $a \in \R$ and let $\mathfrak{M}(\mathcal{E})$ be the $\sigma$
-				    -algebra generated by $\mathcal{E}$. If we let $a \rightarrow \infty$, $(a,b) \in \mathfrak{M}(\mathcal{E})$ for all $a,b \in \R$ since $\sigma$-algebras are closed under countable intersections. 
-				    Thus $\mathcal{B}_{\R} \subset \mathfrak{M}(\mathcal{E})$. Next we will show $\mathfrak{M}(\mathcal{E}) \subset 
-				    \mathcal{B}_{\R}$. 
+			            Let $\mathcal{E}$ be the collection of sets of the form $(-\infty, a)$ with $a \in \R$ and let $\mathfrak{M}(\mathcal{E})$ be the $\sigma$
+			            -algebra generated by $\mathcal{E}$. If we let $a \rightarrow \infty$, $(a,b) \in \mathfrak{M}(\mathcal{E})$ for all $a,b \in \R$ since $\sigma$-algebras are closed under countable intersections.
+			            Thus $\mathcal{B}_{\R} \subset \mathfrak{M}(\mathcal{E})$. Next we will show $\mathfrak{M}(\mathcal{E}) \subset
+				            \mathcal{B}_{\R}$. Let $\mathcal{O}$ be the collection of all open sets on $\R$. Notice that because $\mathcal{B}_{\R}$ is generated by $\mathcal{O}$, and then the collection of sets of form $(-\infty, a) \in \mathcal{O}$, then by Lemma 1.27, $\mathfrak{\mathcal{E}} \in \mathcal{B}_{\R}$.
 		            \end{proof}
 	      \end{enumerate}
 
@@ -132,14 +132,14 @@
 	      \]
 
 	      \begin{proof}
-		      By decomposing $E$ and $F \in \mathcal{M}$ into $E = (E\backslash F) \uplus (E \cap F)$ and $F = (F\backslash E) \uplus (E \cap F)$ then 
+		      By decomposing $E$ and $F \in \mathcal{M}$ into $E = (E\backslash F) \uplus (E \cap F)$ and $F = (F\backslash E) \uplus (E \cap F)$ then
 		      $$ E \cup F = (E \backslash F) \uplus (E \cap F) \uplus (E \backslash F).$$
 		      Then by subtitution,
 		      \begin{align}
-			      \mu(E) + \mu(F) &= \mu(E\backslash F) + 2\mu(E \cap F) + \mu(F\backslash E)\\
-		      			&=  \mu(E \cup F) + \mu (E \cap F).
-			\end{align}
-			by the definition of measure.
+			      \mu(E) + \mu(F) & = \mu(E\backslash F) + 2\mu(E \cap F) + \mu(F\backslash E) \\
+			                      & =  \mu(E \cup F) + \mu (E \cap F).
+		      \end{align}
+		      by the definition of measure.
 	      \end{proof}
 
 	      %%% Problem 6 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -149,13 +149,28 @@
 		      \item If $E, F \in \mathcal{M}$ and $\mu(E \sd F) = 0$ then $\mu(E) = \mu(F)$.
 
 		            \begin{proof}
-			            % YOUR ANSWER HERE
+			            Let $E, F \in \mathcal{M}$ such that $\mu(E \sd F) = 0$. By definition of symmetric difference, $\mu(E \sd F) =  = \mu((E\backslash F) \cup (F\backslash E))=0$. Since
+			            $(E\backslash F)$ and $\(F\backslash E)$ are disjoint, then $\mu(E\backslash F) + \mu(F \backslash E) = 0$ which shows $\mu(E\backslash F) = -\mu(F\backslash E)$.
+			            However, $\mu(F\backslash E) \geq 0$ by definition so $\mu(E\backslash F) = \mu(F\backslash E)$. Notice that $\mu(E) = \mu(E\backslash F) + \mu(E \cap F)$ and
+			            $\mu(F) = \mu(F\backslash E) + \mu(E \cap F)$ as shown from problem 5. Then by substitution,
+			            $$\mu(E) = \mu(E\backslash F) + \mu(E \cap F) = 0 + \mu(E \cap F) = \mu(F\backslash E) + \mu(E \cap F) = \mu(F).$$
+			            Thus, $\mu(E) = \mu(F)$.
+
 		            \end{proof}
 
 		      \item Define a relation on $\mathcal{M}$ by saying that $E \sim F$ if and only if $\mu(E \sd F) = 0$. Show that $\sim$ is an equivalence relation.
 
 		            \begin{proof}
-			            % YOUR ANSWER HERE
+			            We want to show $E \sim F$ holds under reflexivity, symmetry and transitivity. First, let $E \in \mathcal{M}$. Then $E \sd E = (E\backslash E) \cup (E\backslash E) = \emptyset$ and since $\mu(\emptyset) = 0$, then the relation is reflexive. Next, let $F \in \mathcal{M}$ such that $\mu(E \sd F) = 0$. By definition
+			            $F \sd E = (F\backslash E) \cup (E\backslash F)$; however, unions are symmetric so
+			            $(F\backslash E)\cup (E\backslash F) = (E\backslash F) \cup (F\backslash E) = E \sd F).$ Thus, $\mu(F \sd E) = 0$ also and the relation holds under symmetry. Lastly, let $G \in \mathcal{M}$ such that $E \sim F$ and $F \sim G$. Since $\mu(E\sd F) = \mu(F \sd G) = 0$, we will show $(E\sd G) \subseteq (E \sd F) \cup (F \sd G)$. Let
+			            $x \in E \sd G = (E\backslash G) \cup (G\backslash E)$. In the case $x \in F$, then
+			            $x \in F\backslash G \subseteq F \sd G$. Othersiwe, $x \in E\backslash F \subseteq
+				            E \sd F$. Thus, $x \in (E\sd F) \cup (F\sd G)$ which shows $(E \sd G)
+				            \subseteq (E\sd F) \cup (F \sd G).$ By monotonicity and subadditivity properties of measures,
+			            $$ \mu(E \sd G) \leq \mu(E \sd F) + \mu(F \sd G)  = 0$$
+			            and because measures are nonnegative, $\mu(E \sd G) = 0$. Thus $E \sim G$ and the relation is transitive.
+
 		            \end{proof}
 
 		      \item For $E, F$ define $\rho(E,F) = \mu(E \sd F)$. Prove a triangle inequality
@@ -165,7 +180,13 @@
 		            for all $E, F, G$. Argue that $\rho$ defines a metric on the space $\mathcal{M}/{\sim}$ of equivalence classes.
 
 		            \begin{proof}
-			            % YOUR ANSWER HERE
+			            Let $E, F, G \in \mathcal{m}$ and let $x \in E \sd G$. First, observe that if
+			            $$\mu(E\sd G) \leq \mu((E\sd F) \cup (F\sd G))$$
+			            then $\mu(E\sd G) \leq \mu(E\sd F) + \mu (F\sd G)$ by subadditivity so it sufficies to
+			            show $(E\sd G) \subseteq (E\sd F)\cup (F\sd G)$ because of monotonicity.
+			            If $x \in F$ then $x \in F \backslash G$ so by definition $x \in F\sd G \subseteq
+				            (E\sd F) \cup (F\sd G)$ also. If $x \notin F$, then $x \in E\backslash F\subseteq E\sd F$ or $x \in G\backslash F \subseteq F\sd G$. Thus, $E\sd G\subseteq
+				            (E\sd F) \cup (F\sd G)$ so the triangle inequality holds by substitution.
 		            \end{proof}
 	      \end{enumerate}
 
