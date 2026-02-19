@@ -70,7 +70,12 @@ Homework Assignment 3}
 	\item Let $E$ be the set of all real numbers which have the digit 7 missing in their decimal expansion. Show that $E$ is a Lebesgue null set.
 
 	      \begin{proof}
-		      % Your proof here.
+		      Let $S = [0,1)$. Then it suffices to show $\mu(E\cap S) = 0 <\epsilon$ for all $\epilon > 0$ since $\mu(E) = \mu(\bigcup_{i\in \mathbb{Z}} (S + i))$ by countable additivity. Next, let $P_0$ be a partition of $[0,1)$ containing sets of the form
+		      $[\frac{k}{10}, \frac{k+1}{10})$ for $0\leq k \leq 9$. Since $\mu(P_0) = \frac{9}{10}$, notice that forming a similar partition $P_j$ on
+		      every $p \in P_0$ has measure $\frac{9}{10} \mu(p)$ so $$\mu(\bigcup_{j=0}^9 P_j) = (\frac{9}{10})^2.$$
+		      Then for $n\in \mathbb{N}$ decimal places of $x \in S$,
+		      $$\mu(E) = (\frac{9}{10})^n \rightarrow 0$$
+		      as a geometric sequence.
 	      \end{proof}
 
 \end{enumerate}
