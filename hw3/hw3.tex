@@ -45,7 +45,12 @@ Homework Assignment 3}
 	      \textit{Hint: Argue by contradiction and think about the definition of the outer measure that determines Borel-Lebesgue measure.}
 
 	      \begin{proof}
-		      % Your proof here.
+		      Suppose to the contrary that $m(E\cap I) \leq \beta m(I)$. Since $E$ is a Lebesgue measurable set, then there exists a collection of
+		      n-intervals $\{I_k\}^n$ such that $E\subset \bigcup_k I_k$. Furthermore, by definition of Lebesgue measure,
+		      $m(E) = inf_{E\subset \bigcup I_k} \sum_{k=1}^n length(I_k)$ or equivalently that $\sum_{k=1}^n length(I_k)
+			      < m(E) + \epsilon$ for $\epsilon > 0$. Then by subadditivity and substition,
+		      $$m(E) = m(E\cap \bigcup I_k) \leq \sum_{k=1}^n m(E\cap I_k) \leq \beta \sum_{k=1}^n m(I_k) < \beta(m(E) + \epsilon).$$
+		      Notice that while $\epsilon \rightarrow 0$, $m(E) < \beta (m(E) + \epsilon)$ holds only when $\beta \geq 1$ which is a contradiction.
 	      \end{proof}
 
 	\item Let $E \subset \mathbb{R}$ be a set of positive Lebesgue measure. Let $N \in \mathbb{N}$. Show that $E$ contains an arithmetic progression of length $N$, i.e.\ there is an $a > 0$ and a real number $x$ so that $x, x + a, x + 2a, \ldots, x + (N-1)a$ belong to $E$.
