@@ -1,0 +1,86 @@
+\documentclass[12pt]{article}
+
+% Packages
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{enumitem}
+
+% Source - https://tex.stackexchange.com/a/21229
+% Posted by Carsten Thiel
+% Retrieved 2026-02-01, License - CC BY-SA 3.0
+
+\theoremstyle{definition}
+\newtheorem{exmp}{Example}
+
+
+% Title information
+\title{Mathematics 629\\
+Spring 2026\\
+Homework Assignment 4}
+\author{Alexander Kim}
+\date{Due: 2/27/2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+
+	\item First some terminology: For a series $\sum_{j=0}^{\infty} a_j$ we denote by $s_n$ the partial sums $s_n = \sum_{j=0}^{n} a_j$. The series is \textbf{Ces\`{a}ro summable} if $\lim_{N \to \infty} \frac{1}{N+1} \sum_{n=0}^{N} s_n$ exists. The series is \textbf{Abel summable} if $\lim_{r \to 1^{-}} \sum_{j=0}^{\infty} a_j r^j$ exists in $\mathbb{C}$.
+
+	      Now let $(X, \mathcal{M})$ be a measurable space and $f_j : X \to \mathbb{C}$, $j \in \mathbb{N}_0$, define a sequence of measurable functions. Let
+	      \[
+		      E_{\text{Ces}} = \left\{ x \in X : \sum_{j=0}^{\infty} f_j(x) \text{ is Ces\`{a}ro summable} \right\}
+	      \]
+	      \[
+		      E_{\text{Abel}} = \left\{ x \in X : \sum_{j=0}^{\infty} f_j(x) \text{ is Abel summable} \right\}
+	      \]
+	      Show that $E_{\text{Ces}}$ and $E_{\text{Abel}}$ belong to $\mathcal{M}$.
+
+	      \begin{proof}
+		      % Your proof here.
+	      \end{proof}
+
+	\item Let $f_n : [0,1] \to \mathbb{R}$ be a sequence of measurable functions such that $|f_n(x)| < \infty$ almost everywhere. Show that there is a sequence $c_n$ of positive real numbers such that
+	      \[
+		      \lim_{n \to \infty} \frac{f_n(x)}{c_n} = 0 \quad \text{for almost every } x.
+	      \]
+
+	      \textit{Hint: To start show first that one can pick $c_n$ so that $m(\{x : |f_n(x)/c_n| > 1/n\}) < 2^{-n}$.}
+
+	      \begin{proof}
+		      For each $f_n$, let $S_n(c) = \{x \in [0,1]; \vert f_n(x) \vert > \frac{c}{n}\}$. Then
+		      as $c \rightarrow \infty$, $m(\cap_{k=1}^n S_k) = 0$ where 
+		      $S_k = \{x: \vert f_k(x)\vert  = \infty$ \} since we're assuming all $\vert f_n (x) \vert < \infty$ for all $f_n$. Thus, there exists sufficiently large $c_n$ such that 
+		      $$m(E_n = \{x: \frac{\vert f_n(x)\vert}{c_n} > \frac{1}{n} \}) < 2^{-n} < \infty.$$
+		      By the Borel-Cantelli Lemma, $\mu(\text{limsup}E_n) = 0$, so for all $n$ greater than
+		      some $N$, the set $E_n$ becomes sufficiently small to show $\lim_{n\rightarrow \infty}\frac{f_n(x)}{c_n} = 0$ for almost every $x$.
+	      \end{proof}
+
+	\item Let $E \subset \mathbb{R}$ be a compact set and let $d(x, E) = \inf\{|x - y| : y \in E\}$.
+
+	      \begin{enumerate}[label=(\roman*)]
+		      \item Show that $x \mapsto d(x, E)$ is a continuous function.
+
+		            \begin{proof}
+				    Let $a \in E$ and $x \in E$ such that $\lim \vert x - a \vert < \epsilon$ for all $\epsilon, \delta \in \mathbb{R}$ where $\epsilon = \delta$. Then for any $y \in E$, by the triangle inequality
+				    $$ \vert x - y \vert \leq \vert x - a \vert + \vert a - y \vert $$
+				    or equivalently
+				    $$ d(x, E) \leq \vert x - a\vert + d(a, E).$$
+				Similarly, $d(a, E) \leq \vert x - a \vert + d(x, E)$ by the construction of $d(x, E)$. 
+				Thus, $\vert d(x,E) - d(a, E) \vert \leq \vert x - a \vert < \epsilon = \delta$ so $x\mapsto d(x, E)$ is continuous by definition.
+
+		            \end{proof}
+
+		      \item Let $m$ be Lebesgue measure on $\mathbb{R}$. Let $O_n = \{x : d(x, E) < 2^{-n}\}$. Show that $\lim_{n \to \infty} m(O_n) = m(E)$.
+
+		            \begin{proof}
+			            % Your proof here.
+		            \end{proof}
+	      \end{enumerate}
+
+\end{enumerate}
+
+\end{document}
