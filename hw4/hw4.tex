@@ -40,7 +40,21 @@ Homework Assignment 4}
 	      Show that $E_{\text{Ces}}$ and $E_{\text{Abel}}$ belong to $\mathcal{M}$.
 
 	      \begin{proof}
-		      % Your proof here.
+		      Since $E_{Ces}$ is Cesaro summable, by substitution
+		      $$\lim_{N \to \infty} f_j(x) \leq 
+		      \lim_{N \to \infty} \frac{1}{N+1} \sum_{n=0}^{N}\sum_{j=0}^n f_j(x) = l$$
+		      for some $l \in \mathbb{C}$ then the limit of $f_j(x)$ exists. Thus by proposition 
+		      1.85, $E_{Ces} \in M$. 
+			\newline
+			\newline
+		      First, let $r \in \mathbb{Q}\cap [0,1)$ and let $S_N$ be measureable partial sums of $f_j(x)r^j$ as a finite sum of measurable functions. Then, let $C_r = \{x \in X
+		      ; S_N \text{ converges}\}$ is measurable since $F_N(x) = \sum_{j=0}^{\infty}f_j(x)r^j$ is measurable by proposition 1.85. By definition of Abel summable, $x\in E_{Abel}$ if for all $m, k \in \mathbb{N}$and $a,b \in \mathbb{Q} \cap (1 - \frac{1}{m}, 1)$ 
+		      it holds that $x \in C_a \cap C_b$ and $\vert F_a(x) - F_b(x) \vert < k^{-1}$. 
+		      Then by an analagous argument to the proof of proposition 1.85, 
+		      $$E_{Abel} = \bigcap_{k}^\infty \bigcup_{m}^{\infty} \bigcap 
+		      (C_a \cap C_b \cap \{x; \vert F_a(x) - F(b)\vert < k^{-1}\}.$$
+		      Thus $E_{Abel}$ is Cauchy and $E_{Abel} \in M$.
+
 	      \end{proof}
 
 	\item Let $f_n : [0,1] \to \mathbb{R}$ be a sequence of measurable functions such that $|f_n(x)| < \infty$ almost everywhere. Show that there is a sequence $c_n$ of positive real numbers such that
@@ -77,7 +91,12 @@ Homework Assignment 4}
 		      \item Let $m$ be Lebesgue measure on $\mathbb{R}$. Let $O_n = \{x : d(x, E) < 2^{-n}\}$. Show that $\lim_{n \to \infty} m(O_n) = m(E)$.
 
 		            \begin{proof}
-			            % Your proof here.
+			            First, notice $O_n$ is a decreasing sequence of sets because for 
+				    $n+1$, $d(x,E) < 2^{-(n+1)} < 2^{-n}$. In the case that $x \in E$,
+				    then $d(x,E) = 0 < 2^{-n}$ for all $n$. If $x \notin E$, but 
+				    $x\in \bigcap O_n$, then $x \in E$ since $d(x,E) \to 0$ as $n \to \infty$. In other words, $\bigcap O_n = E$ and since $E$ is compact, then $m(E) = M \in \mathbb{R}$. By construction of $O_n$, 
+				    $\bigcap O_n \subseteq O_1 < M + 1 < \infty$. Thus by continuity from above 
+				    $$\lim_{n\to \infty} m(O_n) = m(\bigcap O_n) = m(E).$$
 		            \end{proof}
 	      \end{enumerate}
 
