@@ -86,5 +86,12 @@
 	      \end{enumerate}
 	      and, in both cases, carefully justify your computation.
 
+	      \begin{enumerate}
+		      \item Notice when $x = 0, (\frac{x}{n})^n = 0$ and that for all $n$, plugging in $n^{\frac{99}{100}}$ gives
+		            $\frac{n^{\frac{99}{100}}}{n} = n^{\frac{-1}{100}}$. In other words, $(\frac{x}{n})^n$ is nonnegative, bounded and monotonically decreasing as $n\to \infty$. By theorem 1.121, it is sufficient to directly compute the integral which gives
+		            $$ \lim_{n\to\infty}\int_0^{n^{99/100}} (\frac{x}{n})^n dx = \lim_{n\to\infty}\int_0^{n^{-1/100}}u^n ndu = \lim_{n\to \infty} \frac{n}{n+1}n^{-\frac{n+1}{100}} = 0$$
+		            via u-substitution ($u = \frac{x}{n}$, $dx = ndu$) and the power rule.
+	      \end{enumerate}
+
 \end{enumerate}
 \end{document}
