@@ -21,6 +21,16 @@
 	      \]
 	      for all measurable sets $E$. Show that $f \leq g$ a.e.
 
+	      \begin{proof}
+		      First let $h(x) = f(x) - g(x)$. Then by theorem 1.115
+		      $$\int_E f d\mu - \int_E g d\mu = \int_E h d\mu \leq 0.$$
+		      Let $E = \{x: h(x) > 0\}$. Equivalently, $E = \{x: f(x) > g(x) \}$ which is measurably by corollary 1.75.
+		      Notice that by corollary 1.83, $h^+ = max\{h,0\}$ is measurable and by the construction of $E$ that
+		      $$\int_E h d\mu = \int_E h^+ d\mu \leq 0.$$
+		      Since $h^+ \geq 0$ then $\int_E h^+ d\mu = 0$ so by theorem 1.104 $h^+(x) = 0$ a.e. In other words, $h(x) \leq 0$ almost everywhere so $f(x) \leq g(x)$ almost everywhere.
+
+	      \end{proof}
+
 	      %% Problem 2
 	\item We use Egorov's theorem to prove the dominated convergence theorem, but it can also be deduced by some trickery with Fatou's lemma.
 
@@ -49,6 +59,7 @@
 			            \int |f_n - f|\, d\mu \to 0 \iff \int |f_n|\, d\mu \to \int |f|\, d\mu.
 		            \]
 	      \end{enumerate}
+
 
 	      %% Problem 3
 	\item Let $I = [0, \infty)$, $m$ Lebesgue measure on $I$. Let
