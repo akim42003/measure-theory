@@ -2,6 +2,7 @@
 
 \usepackage[margin=1in]{geometry}
 \usepackage{amsmath, amssymb, amsthm}
+\usepackage{bbm}
 \usepackage{enumitem}
 
 \title{Mathematics 629 \\ Spring 2026 \\ Homework Assignment 5}
@@ -67,6 +68,19 @@
 		      f(x) = e^{x/2} \cos(e^x).
 	      \]
 	      Show that $\displaystyle\lim_{R\to\infty} \int_0^R f(x)\, dm$ exists but $f \notin L^1(I, m)$.
+	      \begin{proof}
+		      Let $f(x) = e^{x/2}cos(e^x)$. By the note for problems 3 and 4,
+		      $$ \lim_{R\to \infty} \int_0^R f(x) dm = \int_{[0,\infty]}f(x) dm = \int_0^\infty f(x)dx.$$
+		      To prove $f \notin L^1(I,m)$ we will show $\int_0^\infty \vert f\vert dm = \infty.$ Let $u = e^x$ and $du = e^x dx$. By u-sub we get
+		      $$ \int_1^\infty u^{-1/2}\vert cos(u)\vert du.$$ Observe that $[0,\infty] \supset \uplus_{k=1}^\infty [k\pi - \frac{\pi}{4}, \pi + \frac{\pi}{4}]$ so by monotonicity,
+		      $$\int_1^\infty u^{-1/2}\vert cos(u) \vert du \geq \sum_{k=1}^\infty \int_{k\pi - \frac{\pi}{4}}^{k\pi+\frac{\pi}{4}} u^{-1/2}\vert cos(u) \vert du.$$
+		      Let $\vert t \vert \leq \frac{\pi}{4}$. Since $\vert cos(k\pi + t)\vert = \vert \cos(t)\vert \geq cos(\frac{\pi}{4}) = \frac{1}{\sqrt{2}}$ and $u^{-1/2} \geq (k\pi + \frac{\pi}{4}$ then
+		      $$ \int_{k\pi - \frac{\pi}{4}}^{k\pi+\frac{\pi}{4}} u^{-1/2}\vert cos(u) \vert du \geq \frac{1}{\sqrt{2}}(k\pi + \frac{\pi}{4})^{-1/2} \frac{\pi}{2}.$$ By bounding $(k\pi + \frac{\pi}{4})^{-1/2} \geq (2k\pi)^{-1/}$ then
+		      $$\sum_{k=1}^\infty \int_{k\pi - \frac{\pi}{4}}^{k\pi+\frac{\pi}{4}} u^{-1/2}\vert cos(u) \vert du \geq \sum_{k=1}^\infty \frac{\sqrt{\pi}}{4\sqrt{k}}$$
+		      which diverges by the p-series test, thus we have shown $\int_0^\infty \vert f\vert dm = \infty.$
+
+
+	      \end{proof}
 
 	      %% Problem 4
 	\item Let $f \in L^1(\mathbb{R}, m)$. Prove that
