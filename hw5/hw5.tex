@@ -91,6 +91,15 @@
 		            $\frac{n^{\frac{99}{100}}}{n} = n^{\frac{-1}{100}}$. In other words, $(\frac{x}{n})^n$ is nonnegative, bounded and monotonically decreasing as $n\to \infty$. By theorem 1.121, it is sufficient to directly compute the integral which gives
 		            $$ \lim_{n\to\infty}\int_0^{n^{99/100}} (\frac{x}{n})^n dx = \lim_{n\to\infty}\int_0^{n^{-1/100}}u^n ndu = \lim_{n\to \infty} \frac{n}{n+1}n^{-\frac{n+1}{100}} = 0$$
 		            via u-substitution ($u = \frac{x}{n}$, $dx = ndu$) and the power rule.
+		      \item To use DCT, $\{f_n\}$ must be a bounded sequence of non-negative functions that converges to $f$. Let $f_x = (1 + \frac{x}{n})^n e^{-2x}.$ Observe that
+		            $(1 + \frac{x}{n})^n \leq e^x$ since $n\ln(1+\frac{x}{n}) \leq n \frac{x}{n} = x = \ln(e^x).$ Since $e^{-2x}  \leq 1$ on $[0,n]$ then $f_n$ is bounded.
+
+		            Then use the taylor expansion of $n\ln(1+\frac{x}{n}) = x + \frac{x^2}{2n} + \frac{x^3}{3n^2} + \cdots$ to see
+		            $\lim_{n\to \infty} n\ln(1+\frac{x}{n}) = x.$ Thus $e^{\ln(1+\frac{x}{n})} \to e^x$ as $n\to \infty$ so by substitution,
+		            $(1 + \frac{x}{n})^n e^{-2x} \to e^xe^{-2x} = e^{-x}.$ By theorem 1.127,
+		            $$\lim_{n\to \infty} \int_0^n \left(1 + \frac{x}{n}\right)^n e^{-2x}\, dx = \int_0^\infty e^{-x}\, dx = 1.$$
+
+
 	      \end{enumerate}
 
 \end{enumerate}
