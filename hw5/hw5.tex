@@ -87,6 +87,20 @@
 	      \[
 		      \lim_{\lambda \to \infty} \int_{\mathbb{R}} \cos(\lambda x)\, f(x)\, dm = 0.
 	      \]
+	      \begin{proof}
+		      Let $\epsilon >0$ and choose a compactly supported $g$ such that
+		      $\verts f - g\verts_1 < \epsilon/2$ and for $R >0$, $supp(g) \subset (-R, R)$. Since $|cos(\lambda x)| \leq 1$ then by theorem 1.117
+		      $$| \int_\mathbb{R} cos(\lambda x)f(x)dm - \int_\mathbb{R} cos(\lambda x)g(x) dm | \leq \int_\mathbb{R} |f-g|dm < \epsilon/2.$$
+		      Since $supp(g) \subset (-R,R)$ then
+		      $$\int_\mathbb{R} cos(\lambda x)g(x)dm = \int_{-R}^R cos(\lambda x)g(x) dx$$ by the hint. Integrating by parts shows
+		      $$\int_{-R}^R cos(\lambda x)g(x)dx = \frac{sin(\lambda x)}{\lambda}g(x) \vert_{-R}^R - \int_{-R}^R \frac{sin(\lambda x)}{\lambda}g'(x)dx.$$ By construction of the compact support of $g$,
+		      $$\int_{-R}^R cos(\lambda x)g(x)dx \leq |\int_{-R}^R \frac{sin(\lambda x)}{\lambda}g'(x)dx | \leq \frac{c}{\lambda} < \frac{\epsilon}{2}$$
+		      for some $c \in \mathbb{R}$ as $\lambda \to \infty$. Thus
+		      $$|\int_\mathbb{R} cos(\lambda x)f(x)dm| \leq |\int cos(\lambda x)(f-g)dm| + |\int cos(\lambda x)gdm| < \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon$$
+		      so $\lim_{\lambda \to \infty} \int_{\mathbb{R}} \cos(\lambda x)\, f(x)\, dm = 0$ as a result.
+
+
+	      \end{proof}
 
 	      \medskip
 	      \noindent\textit{Note for problems 3 and 4:} Here you are allowed to use that if $g$ is Riemann integrable on a bounded interval $[a,b]$ then the Riemann integral $\int_a^b f(x)\, dx$ coincides with the Lebesgue integral $\int_{[a,b]} f\, dm$, a fact that we will establish in class.
