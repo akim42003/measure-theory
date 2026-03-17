@@ -1,0 +1,113 @@
+\documentclass[12pt]{article}
+
+% Packages
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{enumitem}
+
+% Title information
+\title{Mathematics 629\\
+Spring 2026\\
+Homework Assignment 6}
+\author{Alexander Kim}
+\date{Due: 3/25/2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+
+	\item Write out the complete details of the proof of the ``differentiation under the integral'' Theorem~1.129 in the notes.
+
+	      \begin{proof}
+		      % Your proof here.
+	      \end{proof}
+
+	\item Prove that $\int_{(0,\infty)} x^n e^{-x}\,dx = n!$ by differentiating $\int_0^\infty e^{-tx}\,dt = 1/x$.
+
+	      \begin{proof}
+		      % Your proof here.
+	      \end{proof}
+
+	\item Prove that if $f_n$ is a sequence of decreasing nonnegative measurable functions with $\int f_1\,d\mu < \infty$, then
+	      \[
+		      \int \lim_{n\to\infty} f_n\,d\mu = \lim_{n\to\infty} \int f_n\,d\mu.
+	      \]
+
+	      \begin{proof}
+		      % Your proof here.
+	      \end{proof}
+
+	\item Let $y_1, \ldots, y_M$ be distinct points in $\mathbb{R}$, and $\beta_1, \ldots, \beta_M \in \mathbb{R}$. Let
+	      \[
+		      f(x) = \prod_{j=1}^{M} |x - y_j|^{-\beta_j}.
+	      \]
+	      Find a necessary and sufficient condition on $(\beta_1, \ldots, \beta_M)$ for $f$ to belong to $L^1(\mathbb{R}, m)$.
+
+	      \begin{proof}
+		      % Your proof here.
+	      \end{proof}
+
+	\item Define $g\colon \mathbb{R} \to \mathbb{R}$ by
+	      \[
+		      g(x) = \begin{cases} |x|^{-1/3}, & |x| < 1, \\ 0, & |x| > 1. \end{cases}
+	      \]
+	      Let $\{r_k\}_{k=0}^\infty$ be an enumeration of all points in $[0,1] \cap \mathbb{Q}$. Let
+	      \[
+		      f(x) = \mathbf{1}_{[0,1]} \sum_{k \in \mathbb{N}} 2^{-k}\, g(x - r_k).
+	      \]
+
+	      \begin{enumerate}[label=(\roman*)]
+		      \item Show that $f \in L^1([0,1])$.
+
+		            \begin{proof}
+			            % Your proof here.
+		            \end{proof}
+
+		      \item Show that $f$ is unbounded on every open set (and remains so after modification on a set of measure zero). Show that $f$ is discontinuous at every point in $[0,1]$ and remains so after modification on a set of measure zero.
+
+		            \begin{proof}
+			            % Your proof here.
+		            \end{proof}
+
+		      \item Let $0 < \varepsilon < 1$. Construct a compact subset $K_\varepsilon$ of $[0,1]$ such that $m(K_\varepsilon) \geq 1 - \varepsilon$ and $f\mathbf{1}_{K_\varepsilon}$ is continuous on $K_\varepsilon$.
+
+		            \begin{proof}
+			            % Your proof here.
+		            \end{proof}
+	      \end{enumerate}
+
+	\item Let $f \in L^1([0, 2\pi])$.
+
+	      \begin{enumerate}[label=(\roman*)]
+		      \item Prove that $\displaystyle\lim_{n\to\infty} \int_0^{2\pi} f(x)\,e^{-inx}\,dx = 0$.
+
+		            \begin{proof}
+			            % Your proof here.
+		            \end{proof}
+
+		      \item Prove that for a set $E \subset [0, 2\pi]$ of positive Lebesgue measure $m(E)$,
+		            \[
+			            \lim_{n\to\infty} \int_E \cos^2(nx + \gamma_n)\,dx = \frac{m(E)}{2},
+		            \]
+		            for any sequence $\gamma_n$.
+
+		            \begin{proof}
+			            % Your proof here.
+		            \end{proof}
+
+		      \item Let $F_n(x) = a_n \cos nx + b_n \sin nx$. Assume that the series $\sum_{n=0}^\infty F_n(x)$ converges on a set $E$ of positive measure. Show that $\lim_{n\to\infty} a_n = 0$ and $\lim_{n\to\infty} b_n = 0$.
+
+		            \textit{Hint: It might help to express $F_n(x)^2$ in the form $(r_n \cos(nx + \gamma_n))^2$, with $r_n > 0$.}
+
+		            \begin{proof}
+			            % Your proof here.
+		            \end{proof}
+	      \end{enumerate}
+
+\end{enumerate}
+
+\end{document}
