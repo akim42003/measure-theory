@@ -48,7 +48,7 @@ Homework Assignment 6}
 	      \]
 
 	      \begin{proof}
-		      Since $\int f_1 d\mu$ < \infty then $f_1 \in L^1(\mu)$ and $f_1$ dominates $f_n$ as a sequence of decreasing nonnegative measurable functions. Furthermore, $\lim_{n\to \infty} f_n = 0$ since $f_n$ is bounded below by 0 and decreasing. Thus DCT shows
+		      Since $\int f_1 d\mu < \infty$ then $f_1 \in L^1(\mu)$ and $f_1$ dominates $f_n$ as a sequence of decreasing nonnegative measurable functions. Furthermore, $\lim_{n\to \infty} f_n = 0$ since $f_n$ is bounded below by 0 and decreasing. Thus DCT shows
 		      $\int \lim_{n\to \infty} f_n d\mu = \lim_{n\to \infty}\int f_n d\mu.$
 	      \end{proof}
 
@@ -59,7 +59,7 @@ Homework Assignment 6}
 	      Find a necessary and sufficient condition on $(\beta_1, \ldots, \beta_M)$ for $f$ to belong to $L^1(\mathbb{R}, m)$.
 
 	      \begin{proof}
-		      % Your proof here.
+		      The necessary and sufficient condition for $f\in L^1(\mathbb{R},m)$ is that $\beta_j < 1$ for all $j\in \{1, 2, \cdots M\}$ and $\sum_{j=1}^M \beta_j < 1$ also. $\beta_j < 1$ is necessary to prevent $f(x)$ from diverging near $y_j$ but this isn't sufficient because a small $\beta_j$ like $\beta_j = \frac{1/2M}$ would cause $\int f dm$ to diverge. Enforcing $\sum_{j=1}^M \beta_j <1$ ensures $\int f dm$ is finite since $f(x) = |x - y_j|^{\beta_{product} < 1}$ whose integral does converge.
 	      \end{proof}
 
 	\item Define $g\colon \mathbb{R} \to \mathbb{R}$ by
@@ -97,7 +97,11 @@ Homework Assignment 6}
 		      \item Prove that $\displaystyle\lim_{n\to\infty} \int_0^{2\pi} f(x)\,e^{-inx}\,dx = 0$.
 
 		            \begin{proof}
-			            % Your proof here.
+				    First observe that $|e^{-inx}| \leq 1$. By theorem 1.117 let $g$ be a step function such that $\int_0^{2\pi} |f - g| < \epsilon$. Then by the triangle inequality,
+				    $$|\int_0^{2\pi} f e^{-inx}dx| \leq |\int_0^{2\pi} (f-g)e^{-inx}dx| + |\int_0^{2\pi} ge^{-inx}dx|.$$
+				    Since $g$ is a step function given sufficiently large $n$ we know $|\int_0^{2\pi}ge^{-inx}|\to 0$. For the other piece, notice 
+				    $$|\int_0^{2\pi} (f-g)e^{-inx}dx| \leq \int |f-g|dx < \epsilon.$$
+				    Thus by substituting, $\int_0^{2\pi}f(x)^e^{-inx}dx \leq \lim|\int_0^{2\pi}f(x)e^{-inx}dx| < \epsilon$ for sufficiently large $n$ so $\lim_{n\to\infty}fe^{-inx}dx = 0$.
 		            \end{proof}
 
 		      \item Prove that for a set $E \subset [0, 2\pi]$ of positive Lebesgue measure $m(E)$,
@@ -107,7 +111,11 @@ Homework Assignment 6}
 		            for any sequence $\gamma_n$.
 
 		            \begin{proof}
-			            % Your proof here.
+				    To begin use the trig identity for $cos^2(\theta)$ such that $cos^2(nx+\gamma_n) = \frac{1 + cos(2nx+2\gamma_n)}{2}.$ Then $\int_E cos^2(nx+\gamma_n)dx = \frac{m(E)}{2} + \frac{1}{2} \int_E cos(2nx + 2\gamma_n)dx.$ Using euler's formula notice $cos(2nx+2\gamma_n) = Re(e^{2nx}e^{2\gamm_n})$ so by substitution $\int_E cos(2nx + 2\gamma_n)dx = Re(e^{2\gamma_n}\int_E e^{2nx}dx) \leq |\int e^{2inx}dx|$ since $|e^{2i\gamma_n}| = 1$. By part i), 
+				    $$\lim_{n\to\infy}\int_E e^{2inx}dx = 0$$ so 
+				    $$\int_E cos(2nx+2\gamma_n)dx \to 0$$
+				    since $E\subset [0,2\pi]$.
+				    By substitution, $\lim_{n\to\infy}\int_E cos^2(nx+\gamma_n)dx = \frac{m(E)}{2}.$
 		            \end{proof}
 
 		      \item Let $F_n(x) = a_n \cos nx + b_n \sin nx$. Assume that the series $\sum_{n=0}^\infty F_n(x)$ converges on a set $E$ of positive measure. Show that $\lim_{n\to\infty} a_n = 0$ and $\lim_{n\to\infty} b_n = 0$.
@@ -115,7 +123,12 @@ Homework Assignment 6}
 		            \textit{Hint: It might help to express $F_n(x)^2$ in the form $(r_n \cos(nx + \gamma_n))^2$, with $r_n > 0$.}
 
 		            \begin{proof}
-			            % Your proof here.
+				    Let $F_n(x)^2 = r^2cos(nx+\gamma_n)^2$ where $r^2 = a_n^2+b_n^2$. We want to show $r_n\to 0$. Since $\sum_{n=0}^\infty F_n(x)$ converges on $E$ then for all $x\in E$, $F_n(x)\to 0$ and furthermore $F_n(x)^2\to 0$ pointwise also. Using Egorov's theorem, there exists a subset $A\subset E$ such that $F_n^2(x) \to 0$ uniformly on $A$ which shows $\int_A F_n^2(x)dx \to 0$. 
+				    Since $\int_A F_n(x)^2dx = r_n^2\int_A cos(nx+\gamma_n)^2dx$ then 
+				    $$r_n^2 = \frac{\int_A F_n(x)^2dx}{\int_A cos(nx+\gamma_n)^2dx}.$$
+					    Using the result part ii) 
+					    $$r_n^2 \to \frac{0}{m(A)/2} = 0$$
+					thus $a_n^2+b_n^2 \to 0$ so individually $a_n\to 0$ and $b_n \to 0$.
 		            \end{proof}
 	      \end{enumerate}
 
