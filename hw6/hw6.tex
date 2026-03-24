@@ -75,13 +75,19 @@ Homework Assignment 6}
 		      \item Show that $f \in L^1([0,1])$.
 
 		            \begin{proof}
-			            % Your proof here.
+			            Let $f_N(x) = \mathbf{1}_{[0,1]}\sum_{k=1}^N 2^{-k} g(x - r_k)dx$ be the Nth partial sum. It follows that
+			            \begin{align}
+				            \int_0^1 f(x)dx & = \sum_{k=1}^N 2^{-k} \int_0^1 g(x)dx                                         \\
+				                            & = \sum_{k=1}^N \int_{-r_k}^0 (r_k-x)^{-1/3}dx + \int_0^{r_k} (x-r_k)^{-1/3}dx \\
+				                            & = \frac{3}{2}r_k^{2/3} + \frac{3}{2}(1-r_k)^{2/3} \leq 3.
+			            \end{align}
+			            Since $f_N(x) \to f(x)$ and $\int_0^1 f(x)dx$ is bounded then by MCT $\int_0^1 f(x)dx = \lim_{N\to \infty}\int_0^1 f_N(x)dx \leq 3$ so $f$ is $\mathcal{L}^1([0,1])$ and thus $L^1([0,1])$ also.
 		            \end{proof}
 
 		      \item Show that $f$ is unbounded on every open set (and remains so after modification on a set of measure zero). Show that $f$ is discontinuous at every point in $[0,1]$ and remains so after modification on a set of measure zero.
 
 		            \begin{proof}
-			            % Your proof here.
+
 		            \end{proof}
 
 		      \item Let $0 < \varepsilon < 1$. Construct a compact subset $K_\varepsilon$ of $[0,1]$ such that $m(K_\varepsilon) \geq 1 - \varepsilon$ and $f\mathbf{1}_{K_\varepsilon}$ is continuous on $K_\varepsilon$.
@@ -97,11 +103,11 @@ Homework Assignment 6}
 		      \item Prove that $\displaystyle\lim_{n\to\infty} \int_0^{2\pi} f(x)\,e^{-inx}\,dx = 0$.
 
 		            \begin{proof}
-				    First observe that $|e^{-inx}| \leq 1$. By theorem 1.117 let $g$ be a step function such that $\int_0^{2\pi} |f - g| < \epsilon$. Then by the triangle inequality,
-				    $$|\int_0^{2\pi} f e^{-inx}dx| \leq |\int_0^{2\pi} (f-g)e^{-inx}dx| + |\int_0^{2\pi} ge^{-inx}dx|.$$
-				    Since $g$ is a step function given sufficiently large $n$ we know $|\int_0^{2\pi}ge^{-inx}|\to 0$. For the other piece, notice 
-				    $$|\int_0^{2\pi} (f-g)e^{-inx}dx| \leq \int |f-g|dx < \epsilon.$$
-				    Thus by substituting, $\int_0^{2\pi}f(x)^e^{-inx}dx \leq \lim|\int_0^{2\pi}f(x)e^{-inx}dx| < \epsilon$ for sufficiently large $n$ so $\lim_{n\to\infty}fe^{-inx}dx = 0$.
+			            First observe that $|e^{-inx}| \leq 1$. By theorem 1.117 let $g$ be a step function such that $\int_0^{2\pi} |f - g| < \epsilon$. Then by the triangle inequality,
+			            $$|\int_0^{2\pi} f e^{-inx}dx| \leq |\int_0^{2\pi} (f-g)e^{-inx}dx| + |\int_0^{2\pi} ge^{-inx}dx|.$$
+			            Since $g$ is a step function given sufficiently large $n$ we know $|\int_0^{2\pi}ge^{-inx}|\to 0$. For the other piece, notice
+			            $$|\int_0^{2\pi} (f-g)e^{-inx}dx| \leq \int |f-g|dx < \epsilon.$$
+			            Thus by substituting, $\int_0^{2\pi}f(x)^e^{-inx}dx \leq \lim|\int_0^{2\pi}f(x)e^{-inx}dx| < \epsilon$ for sufficiently large $n$ so $\lim_{n\to\infty}fe^{-inx}dx = 0$.
 		            \end{proof}
 
 		      \item Prove that for a set $E \subset [0, 2\pi]$ of positive Lebesgue measure $m(E)$,
@@ -111,11 +117,11 @@ Homework Assignment 6}
 		            for any sequence $\gamma_n$.
 
 		            \begin{proof}
-				    To begin use the trig identity for $cos^2(\theta)$ such that $cos^2(nx+\gamma_n) = \frac{1 + cos(2nx+2\gamma_n)}{2}.$ Then $\int_E cos^2(nx+\gamma_n)dx = \frac{m(E)}{2} + \frac{1}{2} \int_E cos(2nx + 2\gamma_n)dx.$ Using euler's formula notice $cos(2nx+2\gamma_n) = Re(e^{2nx}e^{2\gamm_n})$ so by substitution $\int_E cos(2nx + 2\gamma_n)dx = Re(e^{2\gamma_n}\int_E e^{2nx}dx) \leq |\int e^{2inx}dx|$ since $|e^{2i\gamma_n}| = 1$. By part i), 
-				    $$\lim_{n\to\infy}\int_E e^{2inx}dx = 0$$ so 
-				    $$\int_E cos(2nx+2\gamma_n)dx \to 0$$
-				    since $E\subset [0,2\pi]$.
-				    By substitution, $\lim_{n\to\infy}\int_E cos^2(nx+\gamma_n)dx = \frac{m(E)}{2}.$
+			            To begin use the trig identity for $cos^2(\theta)$ such that $cos^2(nx+\gamma_n) = \frac{1 + cos(2nx+2\gamma_n)}{2}.$ Then $\int_E cos^2(nx+\gamma_n)dx = \frac{m(E)}{2} + \frac{1}{2} \int_E cos(2nx + 2\gamma_n)dx.$ Using euler's formula notice $cos(2nx+2\gamma_n) = Re(e^{2nx}e^{2\gamm_n})$ so by substitution $\int_E cos(2nx + 2\gamma_n)dx = Re(e^{2\gamma_n}\int_E e^{2nx}dx) \leq |\int e^{2inx}dx|$ since $|e^{2i\gamma_n}| = 1$. By part i),
+			            $$\lim_{n\to\infy}\int_E e^{2inx}dx = 0$$ so
+			            $$\int_E cos(2nx+2\gamma_n)dx \to 0$$
+			            since $E\subset [0,2\pi]$.
+			            By substitution, $\lim_{n\to\infy}\int_E cos^2(nx+\gamma_n)dx = \frac{m(E)}{2}.$
 		            \end{proof}
 
 		      \item Let $F_n(x) = a_n \cos nx + b_n \sin nx$. Assume that the series $\sum_{n=0}^\infty F_n(x)$ converges on a set $E$ of positive measure. Show that $\lim_{n\to\infty} a_n = 0$ and $\lim_{n\to\infty} b_n = 0$.
@@ -123,12 +129,12 @@ Homework Assignment 6}
 		            \textit{Hint: It might help to express $F_n(x)^2$ in the form $(r_n \cos(nx + \gamma_n))^2$, with $r_n > 0$.}
 
 		            \begin{proof}
-				    Let $F_n(x)^2 = r^2cos(nx+\gamma_n)^2$ where $r^2 = a_n^2+b_n^2$. We want to show $r_n\to 0$. Since $\sum_{n=0}^\infty F_n(x)$ converges on $E$ then for all $x\in E$, $F_n(x)\to 0$ and furthermore $F_n(x)^2\to 0$ pointwise also. Using Egorov's theorem, there exists a subset $A\subset E$ such that $F_n^2(x) \to 0$ uniformly on $A$ which shows $\int_A F_n^2(x)dx \to 0$. 
-				    Since $\int_A F_n(x)^2dx = r_n^2\int_A cos(nx+\gamma_n)^2dx$ then 
-				    $$r_n^2 = \frac{\int_A F_n(x)^2dx}{\int_A cos(nx+\gamma_n)^2dx}.$$
-					    Using the result part ii) 
-					    $$r_n^2 \to \frac{0}{m(A)/2} = 0$$
-					thus $a_n^2+b_n^2 \to 0$ so individually $a_n\to 0$ and $b_n \to 0$.
+			            Let $F_n(x)^2 = r^2cos(nx+\gamma_n)^2$ where $r^2 = a_n^2+b_n^2$. We want to show $r_n\to 0$. Since $\sum_{n=0}^\infty F_n(x)$ converges on $E$ then for all $x\in E$, $F_n(x)\to 0$ and furthermore $F_n(x)^2\to 0$ pointwise also. Using Egorov's theorem, there exists a subset $A\subset E$ such that $F_n^2(x) \to 0$ uniformly on $A$ which shows $\int_A F_n^2(x)dx \to 0$.
+			            Since $\int_A F_n(x)^2dx = r_n^2\int_A cos(nx+\gamma_n)^2dx$ then
+			            $$r_n^2 = \frac{\int_A F_n(x)^2dx}{\int_A cos(nx+\gamma_n)^2dx}.$$
+			            Using the result part ii)
+			            $$r_n^2 \to \frac{0}{m(A)/2} = 0$$
+			            thus $a_n^2+b_n^2 \to 0$ so individually $a_n\to 0$ and $b_n \to 0$.
 		            \end{proof}
 	      \end{enumerate}
 
