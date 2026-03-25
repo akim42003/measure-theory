@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1774313033.65971 "hw6.tex" "hw6.pdf" "hw6" 1774313033.90378 2
+["pdflatex"] 1774402612.46914 "hw6.tex" "hw6.pdf" "hw6" 1774402612.71201 2
   "/etc/texmf/web2c/texmf.cnf" 1770649484.48546 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -33,6 +33,7 @@
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb" 1248133631 32734 69e00a6b65cedb993666e42eedb3d48f ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1248133631 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb" 1248133631 32587 1788b0c1c5b39540c96f5e42ccd6dae8 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1248133631 32626 4f5c1b83753b1dd3a97d1b399a005b4b ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb" 1248133631 36118 fad905eba93cff5bce1e185fe980a177 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1248133631 34694 ad62b13721ee8eda1dcc8993c8bd7041 ""
@@ -58,8 +59,8 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1770649498.42307 5472669 54eaf61a88b6b7896ebd0dac973cb29c ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1770649539 8214511 07aafe6e0ef00f541a9f2751f4fa9137 ""
-  "hw6.aux" 1774313033.87449 32 c81c40425fbb5e93b90fba65da0b5e61 "pdflatex"
-  "hw6.tex" 1774313032.49445 8873 50be85950c07e7dd82d5202a53aeb7b7 ""
+  "hw6.aux" 1774402612.68256 32 c81c40425fbb5e93b90fba65da0b5e61 "pdflatex"
+  "hw6.tex" 1774402611.65457 10271 77707951783750b64036a3dede466c54 ""
   (generated)
   "hw6.aux"
   "hw6.log"
