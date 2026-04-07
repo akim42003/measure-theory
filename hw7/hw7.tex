@@ -22,51 +22,53 @@
 Let $X_1 = [0,1]$, with $\mathcal{M}_1 = \mathcal{B}_{[0,1]}$ and with $\mu_1$ the Lebesgue measure, $X_2 = [0,1]$ with $\mathcal{M}_2 = \mathcal{B}_{[0,1]}$ and $\mu_2$ being counting measure. Let $\mu = \mu_1 \times \mu_2$. Consider the diagonal $D = \{(x,x) : 0 \leq x \leq 1\}$.
 
 \begin{enumerate}[label=(\roman*)]
-  \item Use the definition of $\mu$ to evaluate $\int \mathbf{1}_D\,d\mu$.
+	\item Use the definition of $\mu$ to evaluate $\int \mathbf{1}_D\,d\mu$.
 
-  \begin{answer}
-  % YOUR ANSWER HERE
-  \end{answer}
+	      \begin{answer}
+		      By definition of product measure, $\int \mathbf{1}_D d\mu = \int \mu_2(sl_{x_1}) d\mu_1(x_1)$ where $sl_{x_1} = x_1$. Then $\int \mathbf{1}_D d\mu = \int_{[0,1]}1 d\mu_1 = 1.$
+	      \end{answer}
 
-  \item Show that $\int\!\int \mathbf{1}_D\,d\mu_1\,d\mu_2$ and $\int\!\int \mathbf{1}_D\,d\mu_2\,d\mu_1$ have different values. Why can Tonelli's theorem not be applied?
+	\item Show that $\int\!\int \mathbf{1}_D\,d\mu_1\,d\mu_2$ and $\int\!\int \mathbf{1}_D\,d\mu_2\,d\mu_1$ have different values. Why can Tonelli's theorem not be applied?
 
-  \begin{answer}
-  % YOUR ANSWER HERE
-  \end{answer}
+	      \begin{answer}
+		      In (i), integrating with respect to $\mu_2$ first showed $\int \int \mathbf{1}_D d\mu_2 d\mu_1 = 1$. Let $sl_{x_2} = x_2$. Then similarly,
+		      $$ \int \int \mathbf{1}_D d\mu_1 d\mu_2 = \int \mu_1(sl_{x_2}) d\mu_2(x_2) = 0*#(sl_{x_2}) = 0.$$
+		      Clearly order of integration matters in this case. Since Tonelli guarantees equivalence regardless of order of integration, the theorem cannot be applied here because $(X_2, M_2, \mu_2)$ is not sigma finite $(\mu_2([0,1]$ is uncountable).
+	      \end{answer}
 \end{enumerate}
 
 %%% Problem 2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Problem 2}
 Consider, for $x \in (0,1) \times (0,1)$,
 \[
-    f(x_1, x_2) = \frac{x_1^2 - x_2^2}{(x_1^2 + x_2^2)^2} = \frac{\partial^2}{\partial x_1\,\partial x_2}\arctan\frac{x_1}{x_2}.
+	f(x_1, x_2) = \frac{x_1^2 - x_2^2}{(x_1^2 + x_2^2)^2} = \frac{\partial^2}{\partial x_1\,\partial x_2}\arctan\frac{x_1}{x_2}.
 \]
 
 \begin{enumerate}[label=(\roman*)]
-  \item Verify that
-  \[
-      \int_0^1\!\int_0^1 \frac{x_1^2 - x_2^2}{(x_1^2 + x_2^2)^2}\,dx_2\,dx_1 = \frac{\pi}{4}, \qquad
-      \int_0^1\!\int_0^1 \frac{x_1^2 - x_2^2}{(x_1^2 + x_2^2)^2}\,dx_1\,dx_2 = -\frac{\pi}{4}.
-  \]
+	\item Verify that
+	      \[
+		      \int_0^1\!\int_0^1 \frac{x_1^2 - x_2^2}{(x_1^2 + x_2^2)^2}\,dx_2\,dx_1 = \frac{\pi}{4}, \qquad
+		      \int_0^1\!\int_0^1 \frac{x_1^2 - x_2^2}{(x_1^2 + x_2^2)^2}\,dx_1\,dx_2 = -\frac{\pi}{4}.
+	      \]
 
-  \begin{answer}
-  % YOUR ANSWER HERE
-  \end{answer}
+	      \begin{answer}
+		      % YOUR ANSWER HERE
+	      \end{answer}
 
-  \item Let $T = \{x : 0 < x_2 < x_1 < 1\}$, let $m$ be Lebesgue measure in $(0,1)^2$ and show that
-  \[
-      \int_T f\,dm = \infty.
-  \]
+	\item Let $T = \{x : 0 < x_2 < x_1 < 1\}$, let $m$ be Lebesgue measure in $(0,1)^2$ and show that
+	      \[
+		      \int_T f\,dm = \infty.
+	      \]
 
-  \begin{answer}
-  % YOUR ANSWER HERE
-  \end{answer}
+	      \begin{answer}
+		      % YOUR ANSWER HERE
+	      \end{answer}
 
-  \item Why can Fubini's theorem not be applied in (i)?
+	\item Why can Fubini's theorem not be applied in (i)?
 
-  \begin{answer}
-  % YOUR ANSWER HERE
-  \end{answer}
+	      \begin{answer}
+		      % YOUR ANSWER HERE
+	      \end{answer}
 \end{enumerate}
 
 %%% Problem 3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -74,31 +76,31 @@ Consider, for $x \in (0,1) \times (0,1)$,
 Let $(X_1, \mathcal{M}_1, \mu_1)$ be a measure space and $X_2 = \N$ with $\mathcal{M}_2 = \mathcal{P}(\N)$ and counting measure $\mu_2$. Interpret Tonelli's and Fubini's theorem in this situation and show that one does not need the assumption of $\sigma$-finiteness of $\mu_1$ in this case.
 
 \begin{answer}
-% YOUR ANSWER HERE
+	% YOUR ANSWER HERE
 \end{answer}
 
 %%% Problem 4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Problem 4}
 Let $(X, \mathcal{M}, \mu)$ be a $\sigma$-finite measure space. Let $f$ be a nonnegative measurable function on $X$ and
 \[
-    U_f = \{(x,y) \in X \times [0,\infty] : 0 \leq y \leq f(x)\}.
+	U_f = \{(x,y) \in X \times [0,\infty] : 0 \leq y \leq f(x)\}.
 \]
 Show that $U_f$ is $\mathcal{M} \times \mathcal{B}_{\R}$ measurable and $\mu \times m(U_f) = \int f\,d\mu$. Show that the Lebesgue measure (in $\R^2$) of the graph of $f$ (i.e., $\{(x, f(x)) : x \in X\}$) is zero.
 
 \begin{answer}
-% YOUR ANSWER HERE
+	% YOUR ANSWER HERE
 \end{answer}
 
 %%% Problem 5 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Problem 5}
 Let
 \[
-    A_1 := \{(x,y,z) \in \R^3 : x^2 + z^2 \leq 1\}, \qquad A_2 := \{(x,y,z) \in \R^3 : y^2 + z^2 \leq 1\}
+	A_1 := \{(x,y,z) \in \R^3 : x^2 + z^2 \leq 1\}, \qquad A_2 := \{(x,y,z) \in \R^3 : y^2 + z^2 \leq 1\}
 \]
 and compute the Lebesgue measure of $A_1 \cap A_2$.
 
 \begin{answer}
-% YOUR ANSWER HERE
+	% YOUR ANSWER HERE
 \end{answer}
 
 \end{document}
