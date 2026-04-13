@@ -88,7 +88,12 @@ Consider, for $x \in (0,1) \times (0,1)$,
 Let $(X_1, \mathcal{M}_1, \mu_1)$ be a measure space and $X_2 = \N$ with $\mathcal{M}_2 = \mathcal{P}(\N)$ and counting measure $\mu_2$. Interpret Tonelli's and Fubini's theorem in this situation and show that one does not need the assumption of $\sigma$-finiteness of $\mu_1$ in this case.
 
 \begin{answer}
-	% YOUR ANSWER HERE
+	Let $f: X\times \mathbb{N} \to \mathbb{R}$ and let $f(n(x_1) = f(x_1, n)$ for $x_1\in X_1$ and $n\in \mathbb{N}$. Recall that counting measure is a sum so
+	$$\int_{\mathbb{N}}f(x_1,n)d\mu_2 = \sum_{n=1}^\infty f(n(x_1).$$
+	By Tonelli's theorem,
+	$$\int_{X_1} \sum_{n=1}^\infty f_n(x_1)d\mu_1 = \sum_{n=1}^\infty \int_{X_1} f(n)x_1)d\mu_1.$$ However this result follows as a result of MCT. If we let $S_n = \sum_{n=1}^N f(n(x_1)$ be the partial sum up to some $N$ then by MCT
+	$$\int_{X_1} \sum_{n=1}^\infty f_n d\mu_1 = lim_{N\to \infty} \int_{X_1} \sum_{n=1}^N f_n d\mu_1 = lim_{N\to \infty}\sum_{n=1}^N \int_{X_1}f_n d\mu_1 = \sum_{n=1}^\infty \int_{X_1} f_n d\mu_1.$$
+	This proof doesn't rely on the $\sigma$-finiteness of $\mu_1$ and furthermore, to show $\sum_N \int |f_n|d\mu_1 < \infty$ apply Tonelli's theorem to $f_n^+$ and $f_n^-$. In both cases, $\sigma$-finiteness of $\mu_1$ is not needed since sums over $\mathbb{N}$ are always well defined.
 \end{answer}
 
 %%% Problem 4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -100,7 +105,13 @@ Let $(X, \mathcal{M}, \mu)$ be a $\sigma$-finite measure space. Let $f$ be a non
 Show that $U_f$ is $\mathcal{M} \times \mathcal{B}_{\R}$ measurable and $\mu \times m(U_f) = \int f\,d\mu$. Show that the Lebesgue measure (in $\R^2$) of the graph of $f$ (i.e., $\{(x, f(x)) : x \in X\}$) is zero.
 
 \begin{answer}
-	% YOUR ANSWER HERE
+	Since we have $\sigma$-finiteness then let $sl_x = sl_x([0,\infty]) =\{y: (x, y) \in U_f \}$. Then integrating over $sl_x$ observe that
+	$$\int_0^\infty \mathbf{1}_{U_f}(sl_x)dm(y) = f(x)$$
+	since $$\mu \times m(U_f) = \int_0^\infty \int_X \mathbf{1}_{U_f} d(\mu \times m).$$
+	In other words, $\mu \times m(U_f) = \int_X f(x) d\mu(x) = \int f d\mu.$
+	Let $G_f = \{(x, f(x)): x \in X\}$ be the graph of $f$. Note that $sl_y(G_f) = \{f(x)\}$ which as a singleton has $m(sl_y) = 0$. Thus
+	$$\mu \times m(G_f) = \int_X m(sl_y)d\mu(x) = \int_X 0 d\mu = 0.$$
+	So the measure of the graph of $f$ is 0.
 \end{answer}
 
 %%% Problem 5 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
