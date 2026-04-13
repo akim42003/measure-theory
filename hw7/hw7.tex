@@ -53,15 +53,15 @@ Consider, for $x \in (0,1) \times (0,1)$,
 
 	      \begin{answer}
 		      \begin{enumerate}
-			      \item First observe that since $\frac{\partial^2}{\partial x_1 \partial x_2}\arctan \frac{x_1}{x_2} = f$ then $$\frac{\partial}{\partial x_2} \arctan \frac{x_1}{x_2} = \frac{1}{1 + (x_1/x_2^2)} * (\frac{-x_1}{x_2^2}) = \frac{-x_1}{x_1^2+x_2^2}.$$ 
-			In other words, 
-			$$\int_0^1 \int_0^1 f dx_2 dx_1 = \int_0^1 \frac{1}{1+x_1^2} dx_1 = \arctan(x_1)|_0^1 = \frac{\pi}{4}.$$
+			      \item First observe that since $\frac{\partial^2}{\partial x_1 \partial x_2}\arctan \frac{x_1}{x_2} = f$ then $$\frac{\partial}{\partial x_2} \arctan \frac{x_1}{x_2} = \frac{1}{1 + (x_1/x_2^2)} * (\frac{-x_1}{x_2^2}) = \frac{-x_1}{x_1^2+x_2^2}.$$
+			            In other words,
+			            $$\int_0^1 \int_0^1 f dx_2 dx_1 = \int_0^1 \frac{1}{1+x_1^2} dx_1 = \arctan(x_1)|_0^1 = \frac{\pi}{4}.$$
 
-			Similarly, integrating in the other order shows 
-			$$\frac{\partial}{\partial x_1} \frac{-x_1}{x_1^2 + x_2^2} = f$$ so then 
-			by keeping $x_1$ fixed we get that 
-			$$\int_0^1 \int_0^1 f dx_1 dx_2 = \int_0^1 \frac{-1}{1+ x_2^2} dx_2 = -\arctan(x_2)|_0^1\frac{-\pi}{4}.$$
-			\end{enumerate}
+			            Similarly, integrating in the other order shows
+			            $$\frac{\partial}{\partial x_1} \frac{-x_1}{x_1^2 + x_2^2} = f$$ so then
+			            by keeping $x_1$ fixed we get that
+			            $$\int_0^1 \int_0^1 f dx_1 dx_2 = \int_0^1 \frac{-1}{1+ x_2^2} dx_2 = -\arctan(x_2)|_0^1\frac{-\pi}{4}.$$
+		      \end{enumerate}
 	      \end{answer}
 
 	\item Let $T = \{x : 0 < x_2 < x_1 < 1\}$, let $m$ be Lebesgue measure in $(0,1)^2$ and show that
@@ -70,13 +70,16 @@ Consider, for $x \in (0,1) \times (0,1)$,
 	      \]
 
 	      \begin{answer}
-		      % YOUR ANSWER HERE
+		      Observe that using $\frac{\partial}{\partial x_2}(\frac{x_2}{x_1^2+x_2^2} = f$ then
+		      $$\int_0^{x_1} = [\frac{x_2}{x_1^2+x_2^2}]_{x_2 = 0}^{x_2=x_1} = \frac{1}{2x_1}.$$
+		      Then integrating over $x_1$ shows
+		      $$\int_T f dm = \int_0^1 \frac{1}{2x_1}dx_1 = \frac{1}{2}[\ln x_1]_0^1 = \infty$$.
 	      \end{answer}
 
 	\item Why can Fubini's theorem not be applied in (i)?
 
 	      \begin{answer}
-		      % YOUR ANSWER HERE
+		      Fubinis theorem requires that $f\in L^1((0,1)^2)$ but we have shown this isn't true in part (ii). This is why part (i) yields integrals of different values without contradicting Fubini's Theorem.
 	      \end{answer}
 \end{enumerate}
 
@@ -111,10 +114,10 @@ and compute the Lebesgue measure of $A_1 \cap A_2$.
 \begin{answer}
 	Define $sl_{xy}(E) \in \mathbb{R^2}$ as the generalized rectangle for fixed $z$ given some $E \in A_1 \cap A_2$ and $sl_x(E) \in \mathbb{R}$ as the generalized rectangle for fixed $y$ and $z$. Note that $m = m_1 \times m_2 \times m_3$ where $m_1, m_2, m_3$ are Lebesgue measure. Since Lebesgue measure is $\sigma$-finite, by the generalized Cavelieri principle we can compute
 	\begin{align}
-		m(A_1 \cap A_2) &= \int m_1\times m_2(sl_{xy})dm_3(z) \\
-		&= \int \int m_2(sl_x(E))dm_1(x)dm_3(z) \\
-		&= \int_{-1}^1 \int_{\sqrt{1-z^2}}^{\sqrt{1-z^2}} 2\sqrt{1-z^2} dm_1(x)dm_3(z)\\
-		&= \int_{-1}^1 4(1-z^2)dm_3(z) = \frac{16}{3}.
+		m(A_1 \cap A_2) & = \int m_1\times m_2(sl_{xy})dm_3(z)                                          \\
+		                & = \int \int m_2(sl_x(E))dm_1(x)dm_3(z)                                        \\
+		                & = \int_{-1}^1 \int_{\sqrt{1-z^2}}^{\sqrt{1-z^2}} 2\sqrt{1-z^2} dm_1(x)dm_3(z) \\
+		                & = \int_{-1}^1 4(1-z^2)dm_3(z) = \frac{16}{3}.
 	\end{align}
 \end{answer}
 
