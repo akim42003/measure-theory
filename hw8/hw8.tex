@@ -1,0 +1,155 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{Mathematics 629 --- Spring 2026}
+\rhead{Homework Assignment 8}
+\cfoot{\thepage}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+
+\begin{document}
+
+\begin{center}
+    {\Large\bfseries Mathematics 629 --- Homework 8} \\[6pt]
+    {\large Due Monday, April 27} \\[6pt]
+    Alexander Kim
+\end{center}
+
+\bigskip
+
+% ============================================================
+\noindent\textbf{Problem 1.}
+Let $(X, \mathcal{M}, \mu)$ be a measure space, let $f : X \to [0, \infty]$ be a nonnegative $\mathcal{M}$-measurable function and define for $\alpha > 0$
+\[
+    \lambda_f(\alpha) = \mu(\{x : f(x) > \alpha\}).
+\]
+Show that
+\[
+    \int f(x)^p\,d\mu = p \int_0^\infty \alpha^{p-1} \lambda_f(\alpha)\,d\alpha.
+\]
+
+\medskip
+\noindent\textit{Hint: First assume that $X$ is $\sigma$-finite and find a way to apply Tonelli's theorem. Then extend to the general case.}
+
+\bigskip
+\begin{proof}
+	First suppose $X$ is $\sigma$-finite and let $A = \{x; f(x) > \alpha\}$ for $\alpha >0$. Then since $f(x)^p = \int_0^{f(x)}p\alpha^{p-1} d\alpha = \int_0^\infty p\alpha^{p-1}\mathbf{1}_A d\alpha d\mu$ we can apply Tonelli's theorem to 
+	$$\int_X f(x)^p d\mu = \int_X \int_0^\infty p\alpha^{p-1}\mathbf{1}_A d\alpha d\mu = p \int_0^\infty \alpha^{p-1} \lambda_f(\alpha) d\alpha.$$
+
+	In the general case where $\sigma$-finiteness does not hold, suppose that since $A \subset X$ then there exists $A_i = \{x; f(x) > \frac{\alpha}{i}\}$ such that $A = \cup_{i=1}^\infty A_i$. 
+	Then if any $\mu(A_j) = \infty$ it follows that $\mu(A) = \infty$ also. Thus because the integralof infinity is finite
+	$$\int_X f(x)^p d\mu = \infty = p\int_0^\infty \alpha^{p-1}\lambda_f(\alpha)d\alpha.$$
+	If $m(A)$ is $\sigma$-finite then $X$ is $\sigma$-finite and we're done.  
+\end{proof}
+
+
+% ============================================================
+\noindent\textbf{Problem 2.}
+For $n+1$ vectors $u_0, u_1, \ldots, u_n \in \R^n$ define the simplex with vertices $u_i$ by
+\[
+    S = \Big\{ \sum_{i=0}^n \tau_i u_i : \tau_i \in [0,1],\ \sum_{i=0}^n \tau_i = 1 \Big\}.
+\]
+Let $B$ be the matrix with column vectors $u_1 - u_0, \ldots, u_n - u_0$. Prove that
+\[
+    m(S) = \frac{|\det B|}{n!}.
+\]
+
+\bigskip
+\noindent\textit{Solution.}
+Let $\tau_0 = 1 - \sum_{i=1}^n \tau_i$. Then we know for $x \in S$ that $x = \mu_\tau + \sum_{i=1}^{n} \tau_i(u_i - u_0) = u_0 - B\tau$ where $\tau = (\tau_1, \cdots, \tau_{n})^T.$ 
+Now let $l_n = \{\tau \in \mathbb{R}^n; \tau_i \in [0,1]; \sum_{i=1}^n \tau_i \leq 1\}$ and let $B(l_n) = B\tau$ be a linear transformation in $\mathbb{R}^n$ such that $S = u_0 + B(l_n)$. By the change of variables theorem, 
+$$m(s) = m(B(l_n)) = |detB|m(l_n).$$
+Now we will use induction to show $m(l_n) = \frac{1}{n!}$. Let $l_1 = \{\tau \in \mathbb{R}; \tau \in [0,1]\}$ be the base case. Clearly $m(l_n) = \frac{1}{1!}$. Suppose the inductive hypothesis holds for $n-1$dimensions. Then for $\tau_n = b \in [0,1]$ it follows that $\{(\tau_1, \cdots \tau_{n-1})^T; \tau_i \geq 0; \sum_{i=1}^{n-1} \tau_i \leq 1 - b\} = (1-b)l_{n-1}$. Since $m((1-b)l_{n-1}) = \frac{(1-b)^{n-1}}{(1-n)!}$ then by the construction of the product measure of $\mathbb{R}^n$,
+$$m(l_n) = \int_0^1 \frac{(1-b)^{n-1}}{(n-1)!} db = \frac{1}{(n-1)!} \frac{1}{n} = \frac{1}{n!}.$$
+Thus we have shown $m(S) = \frac{|detB|}{n!}.$
+
+
+% ============================================================
+\noindent\textbf{Problem 3.}
+Let $f : [0, \infty) \to \C$ be continuous and $\alpha > 0$. Define the $\alpha$th fractional integral by
+\[
+    I^\alpha f(x) = \frac{1}{\Gamma(\alpha)} \int_0^x (x-s)^{\alpha - 1} f(s)\,ds, \qquad x > 0.
+\]
+Prove that $I^{\alpha + \beta} f = I^\alpha(I^\beta f)$ for any $\alpha > 0,\ \beta > 0$.
+
+\medskip
+Show that for $n \in \N$ the $n$th fractional integral satisfies
+\[
+    (I^n f)^{(n)}(x) = f(x),
+\]
+i.e.\ $I^n f$ is an antiderivative of order $n$.
+
+\medskip
+\noindent\textit{Remark: Study and use some facts about the $\Gamma$-function in the notes.}
+
+\bigskip
+\begin{proof}
+	First observe by definition of the $\Gamma$ function that 
+	$$I^{\alpha}(I^{\beta} f(x)) = \frac{1}{\Gamma(\alpha)\Gamma(\beta)} \int_0^x f(t)\int_t^x (x-s)^{\alpha-1} (s-t)^{\beta-1} ds dt.$$
+	Let $s = t + (x+t)u$ for $u\in [0,1]$ and $ds=(x-t)du$. Then by u-substitution, 
+	$$I^{\alpha+\beta} f(x) = \frac{1}{\Gamma(\alpha)\Gamma(\beta)} \int_0^x (x-t)^{\alpha +\beta - 1} f(x) \int_0^1 u^{\beta-1} (1-u)^{\alpha-1} du ds.$$ 
+	Then by theorem 3.21 of the Beta function, 
+	$$\frac{1}{\Gamma(\alpha)\Gamma(\beta)} B(\alpha, \beta) \int_0^x (x-t)^{\alpha +\beta - 1} f(x) \int_0^1 u^{\beta-1} (1-u)^{\alpha-1} du ds = I^{\alpha + \beta} f(x)$$ 
+	and we are done.
+
+	\medskip
+	\noindent To  show the $I^nf$ is the anti derivative of order $n$, let $n=1$ be the base case and observe by definition of the $\Gamma$ function that $I^1 f = \int_0^x f(s) ds = f(x)$ so the base case holds. Since $f$ is continuous suppose this holds for $n-1$ fractional steps such that $I^n f = I^1 (I^{n-1} f)$ and $(I^n f)'  = I^{n-1} f$. By the inductive hypothesis then $(I^n f)^n = ((I^{n} f)')^{n-1} = (I^{n-1} f)^{n-1} = f$. 
+\end{proof}
+
+
+% ============================================================
+\noindent\textbf{Problem 4.}
+Let
+\[
+    G = \Big\{ (x_1, x_2) \in \R^2 : x_1 > 0,\ 0 < x_2 < \frac{x_1^2}{4} \Big\}
+\]
+and
+\[
+    \Omega = \{ (s, t) \in \R^2 : 0 < s < t \}.
+\]
+Prove that for nonnegative Lebesgue measurable $f$ and for $f \in L^1(\R)$ that
+\[
+    \int_G f(x_1, x_2)\,dm(x_1, x_2) = \int_\Omega f(s + t, st)\,|s - t|\,dm(s, t)
+\]
+and
+\[
+    \int_G f(x_1, x_2)\,dm(x_1, x_2) = \frac{1}{2} \int_{(0, \infty) \times (0, \infty)} f(s + t, st)\,|s - t|\,dm(s, t).
+\]
+
+\bigskip
+\begin{proof}
+	First let $\phi(s,t): \Omega \to \mathbb{R}^2 = (s +t, st)$ be a bijective linear map where $\phi(\Omega) \subset G$. Then compute $|det \phi'| = |det \begin{bmatrix} 1 & 1 \\ s & t \end{bmatrix}| = |s-t|.$ By the linear change of variables theorem, 
+	$$\int_G f(x_1, x_2) dm = \int_\Omega f(\phi(s, t))|det \phi'| dm = \int_\Omega f(s+t, st) |s-t| dm.$$
+
+	\medskip
+	\noindent Let $\Omega'$ be the reflection of $\Omega$ on $D = \{t=s >0\}$. Then $Q = (0, \infty) \times (0, \infty) = \Omega' \up D \cup \Omega$. Note that $m(D) = 0$ in $\mathbb{R^2}$. Notice that the bijective mapping $\sigma(s,t) = (t,s)$ is also measure preserving since it is an elementary matrix operation, thus 
+	$$\int_{\Omega'} = f(t+s, ts)|t-s)dm = \int_\Omega f(s+t, st)|s-t|dm$$
+	so by substitution
+	$$\int_Q f(s+t, st) |s-t|dm = 2\int_\Omega f(s+t) |s-t|dm.$$ By the previously proven proposition above,
+	$$ \int_G f(x_1, x_2) dm = \frac{1}{2} \int_Q f(s+t, st) |s-t|dm.$$
+\end{proof}
+
+% ============================================================
+\noindent\textbf{Problem 5.}
+Let $E = \{ x \in \R^n : |x| \leq 10 \}$ and
+\[
+    J_b = \int_E |x_1^2 + \cos^2(x_2^4 + \cdots + x_n^4) - 2|^{-b}\,dm(x).
+\]
+For which $b > 0$ is $J_b$ finite?
+
+\bigskip
+\noindent\textit{Solution}
+$J_b$ is finite for $0<b<1$. If we use Tonelli's theorem, the integrand is positive for $b \geq 1$ which forces $J_b = \infty$.  (ran out of type to finish type setting)
+
+
+\end{document}
